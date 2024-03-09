@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Uno Graham</string>
+    <string name="username_placeholder">Nombre de usuario</string>
+    <string name="level_placeholder">Nv.1</string>
+    <string name="coins_placeholder">Monedas: 23</string>
+    <string name="create_game">Crear Partida</string>
+    <string name="join_game">Unirse a Partida</string>
+    <string name="torneo">Torneo</string>
+    <string name="profile_image"> </string>
+    <string name="cart_icon"> </string>
+    <string name="person_icon"> </string>
+    <string name="settings_icon"> </string>
 </resources>
