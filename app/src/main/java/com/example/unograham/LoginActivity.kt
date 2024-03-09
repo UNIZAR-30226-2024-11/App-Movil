@@ -15,10 +15,16 @@ class LoginActivity : AppCompatActivity() {
 
         // Inicializamos el binding
         //binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_login)
+
+        //setContentView(R.layout.activity_login)
+        // Inicializamos el binding
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+
+        // Establecemos el contenido de la actividad utilizando el objeto binding.root
+        setContentView(binding.root)
 
         // Configuramos el evento clic del botón de inicio de sesión
-        /*binding.buttonLogin.setOnClickListener {
+        binding.buttonLogin.setOnClickListener {
             val username = binding.editTextUsername.text.toString()
             val password = binding.editTextPassword.text.toString()
 
@@ -38,8 +44,8 @@ class LoginActivity : AppCompatActivity() {
         binding.buttonRegister.setOnClickListener {
             // Aquí puedes agregar la lógica para manejar el clic del botón de registro
             // Por ejemplo, podrías abrir una nueva actividad para el registro
-            //val intent = Intent(this, RegisterActivity::class.java)
-            // startActivity(intent)
-        }*/
+            val intent = Intent(this, RegisterActivity::class.java)
+             startActivity(intent)
+        }
     }
 }
