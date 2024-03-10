@@ -10,4 +10,6 @@
     <string name="cart_icon"> </string>
     <string name="person_icon"> </string>
     <string name="settings_icon"> </string>
+    <string name="edit_profile">Editar perfil</string>
+    <string name="partidasGanadas">Número de partidas ganadas: 3</string>
 </resources>

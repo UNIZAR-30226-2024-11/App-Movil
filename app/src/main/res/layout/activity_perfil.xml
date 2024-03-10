@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Contenido principal con degradado de naranja a rojo -->
+    <RelativeLayout
+        android:id="@+id/backgroundLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/orange_to_red_degradado"
+        android:padding="16dp">
+
+        <!-- Flecha de retroceso -->
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="7dp"
+            android:src="@drawable/flecha_atras"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+        <!-- Perfil del usuario -->
+        <LinearLayout
+            android:id="@+id/profileLayout"
+            android:layout_width="251dp"
+            android:layout_height="98dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_below="@id/backArrow"
+            android:layout_marginTop="70dp"
+            android:orientation="horizontal">
+
+            <!-- Foto de perfil (círculo blanco por ahora) -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/profile_image"
+                android:src="@drawable/foto_javi" />
+
+            <!-- Nombre del usuario -->
+            <TextView
+                android:id="@+id/usernameTextView"
+                android:layout_width="161dp"
+                android:layout_height="43dp"
+                android:text="@string/username_placeholder"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Barra de experiencia y número de monedas -->
+        <LinearLayout
+            android:id="@+id/expCoinsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileLayout"
+            android:orientation="horizontal">
+
+            <!-- Nivel del usuario y barra de experiencia -->
+
+            <TextView
+                android:id="@+id/levelTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/level_placeholder"
+                android:textSize="16sp" />
+
+            <ProgressBar
+                android:id="@+id/expProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:max="100" />
+
+            <!-- Número de monedas -->
+            <TextView
+                android:id="@+id/coinsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/coins_placeholder"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- Texto de número de partidas ganadas -->
+        <RelativeLayout
+            android:id="@+id/partidas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/expCoinsLayout"
+            android:layout_marginTop="100dp">
+
+            <TextView
+                android:id="@+id/partidasTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/partidasGanadas"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <!-- Boton -->
+        <LinearLayout
+            android:id="@+id/botonLayout"
+            android:layout_width="377dp"
+            android:layout_height="242dp"
+            android:layout_below="@id/partidas"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/joinGameButton"
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_button_background"
+                android:gravity="center"
+                android:text="@string/edit_profile"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
+
