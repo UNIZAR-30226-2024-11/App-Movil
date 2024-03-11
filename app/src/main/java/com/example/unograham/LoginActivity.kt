@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.unograham.databinding.ActivityLoginBinding
-import android.content.Context
 
 
 class LoginActivity : AppCompatActivity() {
@@ -36,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
             // Por ahora, simplemente estamos comprobando que ambos campos no estén vacíos
             if (username.isNotEmpty() && password.isNotEmpty()) {
                 // Si las credenciales son válidas, iniciamos la actividad MenuActivity
-                val intent = Intent(this, PantallaInicio::class.java)
+                val intent = Intent(this, PantallaInicioActivity::class.java)
                 startActivity(intent)
                 finish() // Finalizamos la actividad actual para evitar que el usuario regrese aquí usando el botón "Atrás"
             } else {

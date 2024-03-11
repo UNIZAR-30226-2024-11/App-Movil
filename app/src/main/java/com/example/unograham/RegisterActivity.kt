@@ -20,7 +20,7 @@ class RegisterActivity : AppCompatActivity() {
             // Puedes agregar la lógica de registro aquí antes de navegar a la pantalla de menú
 
             // Después de completar el registro, iniciamos la actividad del menú
-            val intent = Intent(this, MenuActivity::class.java)
+            val intent = Intent(this, PantallaInicioActivity::class.java)
             startActivity(intent)
             finish() // Esto cierra la actividad actual, evitando que el usuario regrese a la pantalla de registro con el botón "Atrás"
         }

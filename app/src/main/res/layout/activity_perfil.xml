@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -13,92 +14,97 @@
         android:background="@drawable/orange_to_red_degradado"
         android:padding="16dp">
 
-        <!-- Flecha de retroceso -->
         <ImageView
             android:id="@+id/backArrow"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="7dp"
-            android:src="@drawable/flecha_atras"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true" />
-
-        <!-- Perfil del usuario -->
-        <LinearLayout
-            android:id="@+id/profileLayout"
-            android:layout_width="251dp"
-            android:layout_height="98dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_below="@id/backArrow"
-            android:layout_marginTop="70dp"
-            android:orientation="horizontal">
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/flecha" />
 
-            <!-- Foto de perfil (círculo blanco por ahora) -->
-            <ImageView
-                android:id="@+id/profileImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:contentDescription="@string/profile_image"
-                android:src="@drawable/foto_javi" />
+        <ImageView
+            android:id="@+id/blueOval"
+            android:layout_width="700dp"
+            android:layout_height="130dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ovalo" />
 
-            <!-- Nombre del usuario -->
-            <TextView
-                android:id="@+id/usernameTextView"
-                android:layout_width="161dp"
-                android:layout_height="43dp"
-                android:text="@string/username_placeholder"
-                android:textSize="18sp" />
+        <!-- Imagen -->
+        <ImageButton
+            android:id="@+id/profileImage"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_alignTop="@id/blueOval"
+            android:layout_alignStart="@id/blueOval"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/perfil1"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="onProfileImageClick"
+            android:scaleType="centerInside"/>
 
-        </LinearLayout>
-
-        <!-- Barra de experiencia y número de monedas -->
-        <LinearLayout
-            android:id="@+id/expCoinsLayout"
-            android:layout_width="match_parent"
+        <!-- Nombre -->
+        <TextView
+            android:id="@+id/usernameTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/profileLayout"
-            android:orientation="horizontal">
+            android:layout_toEndOf="@id/profileImage"
+            android:layout_alignTop="@id/profileImage"
+            android:layout_marginStart="20dp"
+            android:text="Nombre"
+            android:textSize="28sp"
+            android:textColor="#000000" />
 
-            <!-- Nivel del usuario y barra de experiencia -->
+        <!-- Nivel -->
+        <TextView
+            android:id="@+id/levelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usernameTextView"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="125dp"
+            android:text="Nvl 5"
+            android:textSize="18sp"
+            android:textColor="#000000" />
 
-            <TextView
-                android:id="@+id/levelTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/level_placeholder"
-                android:textSize="16sp" />
-
-            <ProgressBar
-                android:id="@+id/expProgressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:max="100" />
-
-            <!-- Número de monedas -->
-            <TextView
-                android:id="@+id/coinsTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/coins_placeholder"
-                android:textSize="16sp" />
-
-        </LinearLayout>
+        <!-- Monedas -->
+        <TextView
+            android:id="@+id/coinsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/levelTextView"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="125dp"
+            android:text="1000 Monedas"
+            android:textSize="18sp"
+            android:textColor="#000000" />
 
         <!-- Texto de número de partidas ganadas -->
         <RelativeLayout
             android:id="@+id/partidas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/expCoinsLayout"
+            android:layout_below="@id/blueOval"
             android:layout_marginTop="100dp">
-
             <TextView
-                android:id="@+id/partidasTextView"
+                android:id="@+id/partidasTotalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/partidasTotales"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/partidasGanadasTextView"
+                android:layout_below="@id/partidasTotalTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -125,8 +131,6 @@
                 android:gravity="center"
                 android:text="@string/edit_profile"
                 android:textSize="18sp" />
-
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>
-

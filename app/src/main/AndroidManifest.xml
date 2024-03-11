@@ -16,11 +16,25 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
-            android:exported="false" />
-        <activity
             android:name=".LoginActivity"
             android:exported="false" />
+        <activity
+            android:name=".PantallaInicioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AjustesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AmigosActivity"
+            android:exported="false" />
+        <activity
+        android:name=".PerfilActivity"
+        android:exported="false" />
+        <activity
+            android:name=".TiendaActivity"
+            android:exported="false" />
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -1,170 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/orange_to_red_degradado">
+
+    <!-- Círculo azul en la parte superior (1/4 de la pantalla) -->
+    <ImageView
+        android:id="@+id/blueOval"
+        android:layout_width="700dp"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ovalo" />
+
+    <!-- Imagen -->
+    <!-- Imagen -->
+    <ImageButton
+        android:id="@+id/profileImage"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_alignTop="@id/blueOval"
+        android:layout_alignStart="@id/blueOval"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/perfil1"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="onProfileImageClick"
+        android:scaleType="centerInside"/>
 
 
-    <!-- Contenido principal con degradado de naranja a rojo -->
-    <RelativeLayout
-        android:id="@+id/backgroundLayout"
+    <!-- Nombre -->
+    <TextView
+        android:id="@+id/usernameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/profileImage"
+        android:layout_alignTop="@id/profileImage"
+        android:layout_marginStart="20dp"
+        android:text="Nombre"
+        android:textSize="28sp"
+        android:textColor="#000000" />
+
+    <!-- Nivel -->
+    <TextView
+        android:id="@+id/levelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usernameTextView"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="125dp"
+        android:text="Nvl 5"
+        android:textSize="18sp"
+        android:textColor="#000000" />
+
+    <!-- Monedas -->
+    <TextView
+        android:id="@+id/coinsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/levelTextView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="125dp"
+        android:text="1000 Monedas"
+        android:textSize="18sp"
+        android:textColor="#000000" />
+
+
+    <!-- Botones -->
+    <!-- Iconos -->
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/orange_to_red_degradado"
-        android:padding="16dp"> <!-- Agregado un padding de 16dp para dejar espacio en los bordes -->
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <!-- Perfil del usuario -->
-        <LinearLayout
-            android:id="@+id/profileLayout"
-            android:layout_width="251dp"
-            android:layout_height="98dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:orientation="horizontal">
-
-            <!-- Foto de perfil (círculo blanco por ahora) -->
-            <ImageView
-                android:id="@+id/profileImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/circulo_blanco"
-                android:contentDescription="@string/profile_image"
-                android:src="@drawable/foto_javi" />
-
-            <!-- Nombre del usuario -->
-            <TextView
-                android:id="@+id/usernameTextView"
-                android:layout_width="161dp"
-                android:layout_height="43dp"
-                android:text="@string/username_placeholder"
-                android:textSize="18sp" />
-
-        </LinearLayout>
-
-        <!-- Barra de experiencia y número de monedas -->
-        <LinearLayout
-            android:id="@+id/expCoinsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profileLayout"
-            android:orientation="horizontal">
-
-            <!-- Nivel del usuario y barra de experiencia -->
-
-            <TextView
-                android:id="@+id/levelTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/level_placeholder"
-                android:textSize="16sp" />
-
-            <ProgressBar
-                android:id="@+id/expProgressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:max="100" />
-
-            <!-- Número de monedas -->
-            <TextView
-                android:id="@+id/coinsTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/coins_placeholder"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <!-- Logo de la aplicación -->
-
-        <ImageView
-            android:id="@+id/logoImageView"
-            android:layout_width="332dp"
-            android:layout_height="237dp"
-            android:layout_below="@id/expCoinsLayout"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="0dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/unologo" />
-
-
-        <!-- Botones -->
-        <LinearLayout
-            android:id="@+id/buttonsLayout"
-            android:layout_width="377dp"
-            android:layout_height="242dp"
-            android:layout_below="@id/logoImageView"
-            android:layout_marginTop="3dp"
+        <Button
+            android:id="@+id/joinGameButton"
+            android:layout_width="240dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_button_background"
             android:gravity="center"
-            android:orientation="vertical">
+            android:text="@string/join_game"
+            android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/joinGameButton"
-                android:layout_width="240dp"
-                android:layout_height="60dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/rounded_button_background"
-                android:gravity="center"
-                android:text="@string/join_game"
-                android:textSize="18sp" />
+        <Button
+            android:id="@+id/tournamentButton"
+            android:layout_width="240dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_button_background"
+            android:gravity="center"
+            android:text="@string/torneo"
+            android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/tournamentButton"
-                android:layout_width="240dp"
-                android:layout_height="60dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/rounded_button_background"
-                android:gravity="center"
-                android:text="@string/torneo"
-                android:textSize="18sp" />
+        <Button
+            android:id="@+id/createGameButton"
+            android:layout_width="240dp"
+            android:layout_height="80dp"
+            android:background="@drawable/rounded_button_background"
+            android:gravity="center"
+            android:text="@string/create_game"
+            android:textSize="18sp" />
+    </LinearLayout>
 
-            <Button
-                android:id="@+id/createGameButton"
-                android:layout_width="240dp"
-                android:layout_height="60dp"
-                android:background="@drawable/rounded_button_background"
-                android:gravity="center"
-                android:text="@string/create_game"
-                android:textSize="18sp" />
+    <LinearLayout
+        android:id="@+id/iconsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
 
-        </LinearLayout>
+        <ImageButton
+            android:id="@+id/cartIcon"
+            android:layout_width="20dp"
+            android:layout_height="93dp"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/cart_icon"
+            android:onClick="onCartIconClick"
+            android:scaleType="fitCenter"
+            android:src="@drawable/carriito_compra" />
 
+        <ImageButton
+            android:id="@+id/personIcon"
+            android:layout_width="20dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/person_icon"
+            android:src="@drawable/friends"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="onPersonIconClick"
+            android:scaleType="fitCenter" />
 
-        <!-- Iconos -->
-        <LinearLayout
-            android:id="@+id/iconsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/cartIcon"
-                android:layout_width="0dp"
-                android:layout_height="76dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/cart_icon"
-                android:src="@drawable/cart_icon" />
-
-            <ImageView
-                android:id="@+id/personIcon"
-                android:layout_width="0dp"
-                android:layout_height="81dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/person_icon"
-                android:src="@drawable/person_icon" />
-
-            <ImageView
-                android:id="@+id/settingsIcon"
-                android:layout_width="0dp"
-                android:layout_height="79dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/settings_icon"
-                android:src="@drawable/settings_icon" />
-
-        </LinearLayout>
-    </RelativeLayout>
+        <ImageButton
+            android:id="@+id/settingsIcon"
+            android:layout_width="30dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/settings_icon"
+            android:src="@drawable/settings"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="onSettingsIconClick"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
 </RelativeLayout>
