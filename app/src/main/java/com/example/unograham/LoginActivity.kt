@@ -46,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-        /*// Configurar el evento clic del botón de registro
+        // Configurar el evento clic del botón de registro
         binding.buttonRegister.setOnClickListener {
             // Aquí puedes agregar la lógica para manejar el clic del botón de registro
             // Por ejemplo, podrías abrir una nueva actividad para el registro
