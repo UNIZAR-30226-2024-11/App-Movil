@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Contenido principal con degradado de naranja a rojo -->
+    <RelativeLayout
+        android:id="@+id/backgroundLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/orange_to_red_degradado"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/flecha" />
+
+        <ImageView
+            android:id="@+id/blueOval"
+            android:layout_width="700dp"
+            android:layout_height="130dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ovalo" />
+
+        <!-- Imagen -->
+        <ImageButton
+            android:id="@+id/profileImage"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_alignTop="@id/blueOval"
+            android:layout_alignStart="@id/blueOval"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/perfil1"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="onProfileImageClick"
+            android:scaleType="centerInside"/>
+
+        <!-- Nombre -->
+        <TextView
+            android:id="@+id/usernameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/profileImage"
+            android:layout_alignTop="@id/profileImage"
+            android:layout_marginStart="20dp"
+            android:text="Nombre"
+            android:textSize="28sp"
+            android:textColor="#000000" />
+
+        <!-- Nivel -->
+        <TextView
+            android:id="@+id/levelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usernameTextView"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="125dp"
+            android:text="Nvl 5"
+            android:textSize="18sp"
+            android:textColor="#000000" />
+
+        <!-- Monedas -->
+        <TextView
+            android:id="@+id/coinsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/levelTextView"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="125dp"
+            android:text="1000 Monedas"
+            android:textSize="18sp"
+            android:textColor="#000000" />
+
+        <!-- Texto de número de partidas ganadas -->
+        <RelativeLayout
+            android:id="@+id/partidas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blueOval"
+            android:layout_marginTop="100dp">
+            <TextView
+                android:id="@+id/partidasTotalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/partidasTotales"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/partidasGanadasTextView"
+                android:layout_below="@id/partidasTotalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/partidasGanadas"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <!-- Boton -->
+        <LinearLayout
+            android:id="@+id/botonLayout"
+            android:layout_width="377dp"
+            android:layout_height="242dp"
+            android:layout_below="@id/partidas"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/joinGameButton"
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_button_background"
+                android:gravity="center"
+                android:text="@string/edit_profile"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
