@@ -1,6 +1,8 @@
 package com.example.unograham
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 
 class TiendaActivity : AppCompatActivity() {
@@ -9,5 +11,12 @@ class TiendaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tienda)
 
+        val backArrowButton = findViewById<ImageButton>(R.id.backArrow)
+
+        backArrowButton.setOnClickListener {
+            val intent = Intent(this, PantallaInicioActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

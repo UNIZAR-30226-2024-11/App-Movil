@@ -50,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
             // Aquí puedes agregar la lógica para manejar el clic del botón de registro
             // Por ejemplo, podrías abrir una nueva actividad para el registro
             val intent = Intent(this, RegisterActivity::class.java)
-             startActivity(intent)
+            startActivity(intent)
         }
     }
 }

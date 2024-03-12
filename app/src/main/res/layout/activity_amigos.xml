@@ -13,6 +13,17 @@
         android:background="@drawable/orange_to_red_degradado"
         android:padding="16dp">
 
+        <ImageButton
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/flecha" />
+
         <!-- Título de la tienda -->
         <TextView
             android:id="@+id/titleTextView"
@@ -74,11 +85,12 @@
                         android:text="Friend Name"
                         android:textSize="40sp" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/deleteIcon"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/equis" />
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/cruz" />
 
                 </LinearLayout>
 
@@ -103,11 +115,12 @@
                         android:text="Friend Name2"
                         android:textSize="40sp" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/deleteIcon2"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/equis" />
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/cruz" />
 
                 </LinearLayout>
 
@@ -131,11 +144,12 @@
                         android:text="Friend Name 3"
                         android:textSize="40sp" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/deleteIcon3"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/equis" />
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/cruz" />
 
                 </LinearLayout>
 
@@ -159,11 +173,12 @@
                         android:text="Friend Name 4"
                         android:textSize="40sp" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/deleteIcon4"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/equis" />
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/cruz" />
 
                 </LinearLayout>
 
@@ -187,11 +202,12 @@
                         android:text="Friend Name 5"
                         android:textSize="40sp" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/deleteIcon5"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/equis" />
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/cruz" />
 
                 </LinearLayout>
 
@@ -215,11 +231,12 @@
                         android:text="Friend Name 6"
                         android:textSize="40sp" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/deleteIcon6"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/equis" />
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/cruz" />
 
                 </LinearLayout>
 

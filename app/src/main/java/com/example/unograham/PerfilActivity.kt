@@ -1,5 +1,6 @@
 package com.example.unograham
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
@@ -11,7 +12,13 @@ class PerfilActivity : AppCompatActivity() {
                 super.onCreate(savedInstanceState)
                 setContentView(R.layout.activity_perfil)
 
-                val backArrowButton = findViewById<Button>(R.id.backArrow)
+                val backArrowButton = findViewById<ImageButton>(R.id.backArrow)
+
+                backArrowButton.setOnClickListener {
+                        val intent = Intent(this, PantallaInicioActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                }
         }
 
 
