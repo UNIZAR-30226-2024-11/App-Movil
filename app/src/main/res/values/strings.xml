@@ -13,4 +13,5 @@
     <string name="edit_profile">Editar perfil</string>
     <string name="partidasGanadas">Número de partidas ganadas: 3</string>
     <string name="partidasTotales">Número de partidas en total: 5</string>
+    <string name="Solicitud">Solicitudes de amistad</string>
 </resources>
