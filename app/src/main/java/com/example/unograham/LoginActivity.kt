@@ -17,22 +17,15 @@ class LoginActivity : AppCompatActivity() {
         // Inicializamos el binding
         binding = ActivityLoginBinding.inflate(layoutInflater)
 
-        //binding = ActivityLoginBinding.inflate(layoutInflater)
-
-        //setContentView(R.layout.activity_login)
-        // Inicializamos el binding
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-
         // Establecemos el contenido de la actividad utilizando el objeto binding.root
         setContentView(binding.root)
 
         // Configuramos el evento clic del botón de inicio de sesión
         binding.buttonLogin.setOnClickListener {
+            //Obtenemos el valor de usurio y contraeña introducidos
             val username = binding.editTextUsername.text.toString()
             val password = binding.editTextPassword.text.toString()
 
-            // Aquí agregarías la lógica para verificar el nombre de usuario y la contraseña
-            // Por ahora, simplemente estamos comprobando que ambos campos no estén vacíos
             if (username.isNotEmpty() && password.isNotEmpty()) {
                 // Si las credenciales son válidas, iniciamos la actividad MenuActivity
                 val intent = Intent(this, PantallaInicioActivity::class.java)
@@ -47,8 +40,6 @@ class LoginActivity : AppCompatActivity() {
 
         // Configurar el evento clic del botón de registro
         binding.buttonRegister.setOnClickListener {
-            // Aquí puedes agregar la lógica para manejar el clic del botón de registro
-            // Por ejemplo, podrías abrir una nueva actividad para el registro
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
