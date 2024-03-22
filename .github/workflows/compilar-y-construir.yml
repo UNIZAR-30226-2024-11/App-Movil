@@ -41,8 +41,8 @@ jobs:
           ls -l
 
         
-      - name: Upload APK
+      - name: Subir APK al repositorio
         uses: actions/upload-artifact@v4
         with:
           name: unograham-release
-          path: app/build/outputs/apk/release/unograham-release.apk
+          path: app/build/outputs/apk/release/app-release-unsigned.apk
