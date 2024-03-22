@@ -3,6 +3,7 @@ name: Build APK
 
 on:
   workflow_dispatch:
+  #esto es para poder ejecutar el workflow sin necesidad de hacer un commit a main
 
   push:
     branches:
@@ -20,11 +21,9 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '17'
+          #version minima necesaria para que funcione el proyecto con kotlin
           distribution: 'adopt'
           #en teoria es la mejor distribucion para desarrollo de movil
-          
-      - name: Debug
-        run: ls -l
 
       - name: Darle permiso de ejecucion al ejecutable de Gradle
         run: chmod +x gradlew
@@ -34,12 +33,6 @@ jobs:
         # assembleRelease  compila el código fuente y crea el APK de lanzamiento
         # test ejecuta las pruebas unitarias que hayamos definido en el proyecto
         run: ./gradlew clean assembleRelease test
-
-      - name: Debug
-        run: |
-          cd app/build/outputs/apk/release
-          ls -l
-
         
       - name: Subir APK al repositorio
         uses: actions/upload-artifact@v4
