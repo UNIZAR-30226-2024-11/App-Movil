@@ -1,0 +1,29 @@
+
+name: Build APK
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio al ejecutor
+        uses: actions/checkout@v4
+
+      - name: Instalar el JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+
+      - name: Compilar y construir apk Gradle
+        # clean limpia los archivos temporales y de compilacion antiguos
+        # assembleRelease  compila el código fuente y crea el APK de lanzamiento
+        # test ejecuta las pruebas unitarias que hayamos definido en el proyecto
+        run: ./gradlew clean assembleRelease test
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: unograham-release
+          path: app/build/outputs/apk/release/unograham-release.apk
