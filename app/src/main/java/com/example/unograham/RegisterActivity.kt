@@ -5,6 +5,11 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * Register activity
+ *
+ * @constructor Create empty Register activity
+ */
 class RegisterActivity : AppCompatActivity() {
 
     /**

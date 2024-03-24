@@ -8,6 +8,11 @@ import android.content.Context
 import android.widget.Button
 import android.widget.ImageButton
 
+/**
+ * Pantalla inicio activity
+ *
+ * @constructor Create empty Pantalla inicio activity
+ */
 class PantallaInicioActivity : AppCompatActivity() {
 
     /**

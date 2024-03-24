@@ -6,6 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.unograham.databinding.ActivityLoginBinding
 
 
+/**
+ * Login activity
+ *
+ * @constructor Create empty Login activity
+ */
 class LoginActivity : AppCompatActivity() {
 
     // Utilizamos lateinit para inicializar binding más adelante
