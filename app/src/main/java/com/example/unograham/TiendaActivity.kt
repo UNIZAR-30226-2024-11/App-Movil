@@ -7,6 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 
 class TiendaActivity : AppCompatActivity() {
 
+
+    /**
+     * Método llamado cuando se crea la actividad de la tienda. Aquí es donde se inicializan
+     * los componentes de la interfaz de usuario, se configuran los listeners y
+     * se realizan otras operaciones de inicialización específicas de la actividad de la tienda.
+     *
+     * @param savedInstanceState El estado de la instancia guardada de la actividad.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tienda)

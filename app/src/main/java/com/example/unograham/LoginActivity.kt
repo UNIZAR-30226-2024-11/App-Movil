@@ -9,8 +9,14 @@ import com.example.unograham.databinding.ActivityLoginBinding
 class LoginActivity : AppCompatActivity() {
 
     // Utilizamos lateinit para inicializar binding más adelante
+    /** Variable que almacena la referencia al binding de la actividad. */
     private lateinit var binding: ActivityLoginBinding
 
+    /**
+     * Método llamado cuando se crea la actividad.
+     *
+     * @param savedInstanceState El estado de la instancia guardada de la actividad.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

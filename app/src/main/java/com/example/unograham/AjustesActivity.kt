@@ -7,6 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 
 class AjustesActivity : AppCompatActivity() {
 
+    /**
+     * Método llamado cuando se crea la actividad. Aquí es donde se inicializan
+     * los componentes de la interfaz de usuario, se configuran los listeners y
+     * se realizan otras operaciones de inicialización.
+     *
+     * @param savedInstanceState El estado de la instancia guardada de la actividad.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ajustes)
