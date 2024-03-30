@@ -1,45 +1,70 @@
-package com.example.unograham
-
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.unograham.PantallaInicioActivity
+import com.example.unograham.RegisterActivity
 import com.example.unograham.databinding.ActivityLoginBinding
-
+import com.example.unograham.io.ApiService
+import com.example.unograham.io.reponse.LoginResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
 
-    // Utilizamos lateinit para inicializar binding más adelante
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var apiService: ApiService
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Inicializamos el binding
         binding = ActivityLoginBinding.inflate(layoutInflater)
-
-        // Establecemos el contenido de la actividad utilizando el objeto binding.root
         setContentView(binding.root)
 
-        // Configuramos el evento clic del botón de inicio de sesión
-        binding.buttonLogin.setOnClickListener {
-            //Obtenemos el valor de usurio y contraeña introducidos
-            val username = binding.editTextUsername.text.toString()
-            val password = binding.editTextPassword.text.toString()
+        apiService = ApiService.create()
+        sharedPreferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE)
+
+        binding.loginButton.setOnClickListener {
+            val username = binding.username.text.toString()
+            val password = binding.password.text.toString()
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                // Si las credenciales son válidas, iniciamos la actividad MenuActivity
-                val intent = Intent(this, PantallaInicioActivity::class.java)
-                startActivity(intent)
-                finish() // Finalizamos la actividad actual para evitar que el usuario regrese aquí usando el botón "Atrás"
+                apiService.postlogin(username, password).enqueue(object : Callback<LoginResponse> {
+                    override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                        if (response.isSuccessful) {
+                            val loginResponse = response.body()
+                            if (loginResponse != null && loginResponse.success) {
+                                // Guardar estado de inicio de sesión en SharedPreferences
+                                with(sharedPreferences.edit()) {
+                                    putBoolean("is_logged_in", true)
+                                    apply()
+                                }
+
+                                val intent = Intent(this@LoginActivity, PantallaInicioActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            } else {
+                                Toast.makeText(this@LoginActivity, "Inicio de sesión fallido", Toast.LENGTH_SHORT).show()
+                            }
+                        } else {
+                            Toast.makeText(this@LoginActivity, "Error en la solicitud", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                        Toast.makeText(this@LoginActivity, "Error en la solicitud: ${t.message}", Toast.LENGTH_SHORT).show()
+                    }
+                })
             } else {
-                // Mostramos un mensaje de error si el campo de usuario o contraseña está vacío
-                // Aquí puedes mostrar un Toast o un Snackbar con un mensaje de error
+                Toast.makeText(this@LoginActivity, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
             }
         }
 
-
-        // Configurar el evento clic del botón de registro
-        binding.buttonRegister.setOnClickListener {
+        binding.registerButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }

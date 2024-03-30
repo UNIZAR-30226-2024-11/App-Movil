@@ -12,7 +12,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         // Referenciamos el botón de registro desde el layout
-        val buttonRegister: Button = findViewById(R.id.buttonRegister)
+        val buttonRegister: Button = findViewById(R.id.registerButton)
 
         // Configuramos el evento clic del botón de registro
         buttonRegister.setOnClickListener {
