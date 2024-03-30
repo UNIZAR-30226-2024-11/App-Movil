@@ -1,6 +1,6 @@
 package com.example.unograham.io
 
-import android.telecom.Call
+import retrofit2.Call
 import com.example.unograham.io.reponse.LoginResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 interface ApiService {
     @POST(value = "login") // Petición a la ruta del login
-    fun postlogin(@Query(value="user")user:String, @Query(value="contraseña")contraseña: String):
+    fun postlogin(@Query(value="user")user:String, @Query(value="contraseña")contrasena: String):
             Call<LoginResponse>
     companion object Factory{
         private const val BASE_URL = "" //URL de la aplicación
@@ -21,5 +21,4 @@ interface ApiService {
             return retrofit.create(ApiService::class.java)
         }
     }
-
 }
