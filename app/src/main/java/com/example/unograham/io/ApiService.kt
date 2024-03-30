@@ -2,6 +2,7 @@ package com.example.unograham.io
 
 import retrofit2.Call
 import com.example.unograham.io.reponse.LoginResponse
+import com.example.unograham.io.response.RegisterResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.POST
@@ -11,6 +12,10 @@ interface ApiService {
     @POST(value = "login") // Petición a la ruta del login
     fun postlogin(@Query(value="user")user:String, @Query(value="contraseña")contrasena: String):
             Call<LoginResponse>
+    @POST(value = "register") // Petición a la ruta del registro
+    fun postRegister(@Query(value="user") user: String, @Query("email") email: String, @Query(value="contraseña") contraseña: String):
+            Call<RegisterResponse>
+
     companion object Factory{
         private const val BASE_URL = "" //URL de la aplicación
         fun create(): ApiService{
