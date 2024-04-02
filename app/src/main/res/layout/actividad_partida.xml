@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Fondo del tablero -->
+    <ImageView
+        android:id="@+id/fondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo" />
+
+    <!-- Contenedor del jugador 1 -->
+    <LinearLayout
+        android:id="@+id/player1Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <!-- Contenido del jugador 1 -->
+
+        <ImageView
+            android:id="@+id/imagenJ1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/player_image"
+            android:src="@drawable/perfil1" />
+
+        <TextView
+            android:id="@+id/nicknameJ1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Nickname J1"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Contenedor del jugador 2 -->
+    <LinearLayout
+        android:id="@+id/player2Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <!-- Contenido del jugador 2 -->
+
+        <ImageView
+            android:id="@+id/imagenJ2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/player_image"
+            android:src="@drawable/perfil2" />
+
+        <TextView
+            android:id="@+id/nicknameJ2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Nickname J2"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Contenedor del jugador 3 -->
+    <LinearLayout
+        android:id="@+id/player3Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <!-- Contenido del jugador 3 -->
+
+        <ImageView
+            android:id="@+id/imagenJ3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/player_image"
+            android:src="@drawable/perfil3" />
+
+        <TextView
+            android:id="@+id/nicknameJ3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Nickname J3"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Contenedor del jugador 4 -->
+    <LinearLayout
+        android:id="@+id/player4Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <!-- Contenido del jugador 4 -->
+
+        <ImageView
+            android:id="@+id/imagenJ4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/player_image"
+            android:src="@drawable/perfil4" />
+
+        <TextView
+            android:id="@+id/nicknameJ4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Nickname J4"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Tacos de cartas -->
+    <LinearLayout
+        android:id="@+id/robarCartaLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <!-- Taco de cartas para robar -->
+        <ImageView
+            android:id="@+id/tacoRobar"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:contentDescription="Taco de cartas para robar"
+            android:src="@drawable/robar_carta" />
+
+        <!-- Taco de cartas jugadas -->
+        <ImageView
+            android:id="@+id/tacoJugadas"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="Taco de cartas jugadas"
+            android:src="@drawable/robar_carta" />
+    </LinearLayout>
+
+</RelativeLayout>

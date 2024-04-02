@@ -19,10 +19,11 @@ class PantallaInicioActivity : AppCompatActivity() {
         val createGameButton = findViewById<Button>(R.id.createGameButton)
         val joinGameButton = findViewById<Button>(R.id.joinGameButton)
         val tournamentButton = findViewById<Button>(R.id.tournamentButton)
-        val cartIconButton = findViewById<ImageButton>(R.id.cartIcon)
-        val personIconButton = findViewById<ImageButton>(R.id.personIcon)
-        val settingsIconButton = findViewById<ImageButton>(R.id.settingsIcon)
-        val profileImageButton = findViewById<ImageButton>(R.id.profileImage)
+        val cartIconButton = findViewById<ImageButton>(R.id.cartButton)
+        val personIconButton = findViewById<ImageButton>(R.id.personButton)
+        val settingsIconButton = findViewById<ImageButton>(R.id.settingsButton)
+        val logoutIconButton = findViewById<ImageButton>(R.id.logoutButton)
+        val profileImageButton = findViewById<ImageButton>(R.id.profileImageView)
 
 
         createGameButton.setOnClickListener {
@@ -53,6 +54,13 @@ class PantallaInicioActivity : AppCompatActivity() {
 
         settingsIconButton.setOnClickListener {
             val intent = Intent(this, AjustesActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        logoutIconButton.setOnClickListener {
+            //IMPLEMENTAR CERRAR SESIÓN :)
+            //val intent = Intent(this, PerfilActivity::class.java)
             startActivity(intent)
             finish()
         }

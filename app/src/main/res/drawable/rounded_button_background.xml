@@ -2,4 +2,7 @@
     android:shape="rectangle">
     <corners android:radius="20dp" /> <!-- Radio de las esquinas -->
     <solid android:color="@android:color/white" /> <!-- Color de fondo -->
+    <stroke
+        android:width="2dp"
+        android:color="@android:color/black" />
 </shape>

@@ -1,155 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/orange_to_red_degradado">
+    android:orientation="vertical"
+    android:background="@drawable/loginbkg"
+    android:padding="16dp"
+    tools:context=".PantallaInicioActivity">
 
-    <!-- Círculo azul en la parte superior (1/4 de la pantalla) -->
-    <ImageView
-        android:id="@+id/blueOval"
-        android:layout_width="700dp"
-        android:layout_height="130dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"
-        android:src="@drawable/ovalo" />
-
-    <!-- Imagen -->
-    <!-- Imagen -->
-    <ImageButton
-        android:id="@+id/profileImage"
-        android:layout_width="70dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_alignTop="@id/blueOval"
-        android:layout_alignStart="@id/blueOval"
-        android:layout_marginTop="14dp"
-        android:layout_marginStart="16dp"
-        android:src="@drawable/perfil1"
-        android:background="?android:attr/selectableItemBackground"
-        android:onClick="onProfileImageClick"
-        android:scaleType="centerInside"/>
-
-
-    <!-- Nombre -->
-    <TextView
-        android:id="@+id/usernameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/profileImage"
-        android:layout_alignTop="@id/profileImage"
-        android:layout_marginStart="20dp"
-        android:text="Nombre"
-        android:textSize="28sp"
-        android:textColor="#000000" />
-
-    <!-- Nivel -->
-    <TextView
-        android:id="@+id/levelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/usernameTextView"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="125dp"
-        android:text="Nvl 5"
-        android:textSize="18sp"
-        android:textColor="#000000" />
-
-    <!-- Monedas -->
-    <TextView
-        android:id="@+id/coinsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/levelTextView"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="125dp"
-        android:text="1000 Monedas"
-        android:textSize="18sp"
-        android:textColor="#000000" />
-
-
-    <!-- Botones -->
-    <!-- Iconos -->
+    <!-- Sección del perfil -->
     <LinearLayout
-        android:id="@+id/buttonsLayout"
+        android:id="@+id/profileLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/rounded_button_background"
+        android:padding="16dp"
+        android:elevation="8dp">
+
+        <!-- Imagen de perfil -->
+        <ImageButton
+            android:id="@+id/profileImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Nombre de usuario -->
+            <TextView
+                android:id="@+id/usernameLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre de usuario: "
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/usernameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/coinsLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monedas: "
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/coinsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/xpLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XP: "
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/xpTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/levelLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nivel: "
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/levelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Imagen adicional -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/Logotipo_no_rasterizado" />
+
+    <!-- Botones para iniciar partidas -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:gravity="center"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/joinGameButton"
-            android:layout_width="240dp"
-            android:layout_height="80dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/rounded_button_background"
-            android:gravity="center"
-            android:text="@string/join_game"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/tournamentButton"
-            android:layout_width="240dp"
-            android:layout_height="80dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/rounded_button_background"
-            android:gravity="center"
-            android:text="@string/torneo"
-            android:textSize="18sp" />
+        android:layout_marginTop="16dp">
 
         <Button
             android:id="@+id/createGameButton"
-            android:layout_width="240dp"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear partida"
             android:background="@drawable/rounded_button_background"
-            android:gravity="center"
-            android:text="@string/create_game"
-            android:textSize="18sp" />
+            android:elevation="8dp"/>
+
+        <Button
+            android:id="@+id/joinGameButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unirse a partida"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rounded_button_background"
+            android:elevation="8dp"/>
+
+        <Button
+            android:id="@+id/tournamentButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Torneo"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rounded_button_background"
+            android:elevation="8dp"/>
+
     </LinearLayout>
 
+    <!-- Barra de menú -->
     <LinearLayout
-        android:id="@+id/iconsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="center">
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_button_background"
+        android:layout_marginTop="38dp">
 
+        <!-- Botón Ajustes -->
         <ImageButton
-            android:id="@+id/cartIcon"
-            android:layout_width="20dp"
-            android:layout_height="93dp"
+            android:id="@+id/settingsButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="?android:attr/selectableItemBackground"
-            android:contentDescription="@string/cart_icon"
-            android:onClick="onCartIconClick"
-            android:scaleType="fitCenter"
-            android:src="@drawable/carriito_compra" />
+            android:src="@drawable/ajustes"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
 
+        <!-- Botón Amigos -->
         <ImageButton
-            android:id="@+id/personIcon"
-            android:layout_width="20dp"
-            android:layout_height="100dp"
+            android:id="@+id/personButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:contentDescription="@string/person_icon"
-            android:src="@drawable/friends"
-            android:background="?android:attr/selectableItemBackground"
-            android:onClick="onPersonIconClick"
-            android:scaleType="fitCenter" />
+            android:src="@drawable/correo"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
 
+        <!-- Botón Tienda -->
         <ImageButton
-            android:id="@+id/settingsIcon"
-            android:layout_width="30dp"
-            android:layout_height="100dp"
+            android:id="@+id/cartButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:contentDescription="@string/settings_icon"
-            android:src="@drawable/settings"
-            android:background="?android:attr/selectableItemBackground"
-            android:onClick="onSettingsIconClick"
-            android:scaleType="fitCenter" />
+            android:src="@drawable/tienda"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
+
+        <!-- Botón Cerrar sesión -->
+        <ImageButton
+            android:id="@+id/logoutButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/correo"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
     </LinearLayout>
-</RelativeLayout>
+
+
+</LinearLayout>
