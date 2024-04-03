@@ -1,4 +1,4 @@
-package com.example.unograham.io.reponse
+package com.example.unograham.io.response
 
 import com.example.unograham.model.User
 

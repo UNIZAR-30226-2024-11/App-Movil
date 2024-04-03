@@ -13,17 +13,6 @@
         android:background="@drawable/orange_to_red_degradado"
         android:padding="16dp">
 
-        <ImageButton
-            android:id="@+id/backArrow"
-            android:layout_width="20dp"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/flecha" />
-
         <!-- Título de la tienda -->
         <TextView
             android:id="@+id/titleTextView"
@@ -35,14 +24,56 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"/>
 
-        <!-- Botón -->
+        <RelativeLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:background="@android:color/transparent"
+            android:padding="16dp">
+
+            <!-- Barra de búsqueda -->
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:hint="Buscar usuario"
+                android:inputType="text" />
+
+            <!-- Botón de enviar solicitud -->
+            <Button
+                android:id="@+id/sendRequestButton"
+                android:layout_width="240dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/searchEditText"
+                android:layout_centerHorizontal="true"
+                android:text="Enviar solicitud"
+                android:background="@drawable/rounded_button_background" />
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/flecha" />
+
+        <!-- Botón de solicitudes -->
         <Button
             android:id="@+id/Button"
             android:layout_width="240dp"
             android:layout_height="80dp"
-            android:layout_below="@id/titleTextView"
+            android:layout_below="@id/searchLayout"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="6dp"
             android:background="@drawable/rounded_button_background"
             android:gravity="center"
             android:text="@string/Solicitud"

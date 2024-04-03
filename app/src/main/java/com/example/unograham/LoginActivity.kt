@@ -6,11 +6,9 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.unograham.PantallaInicioActivity
-import com.example.unograham.RegisterActivity
 import com.example.unograham.databinding.ActivityLoginBinding
 import com.example.unograham.io.ApiService
-import com.example.unograham.io.reponse.LoginResponse
+import com.example.unograham.io.response.LoginResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
