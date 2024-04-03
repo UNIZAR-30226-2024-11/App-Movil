@@ -17,7 +17,7 @@ interface ApiService {
             Call<RegisterResponse>
 
     companion object Factory{
-        private const val BASE_URL = "" //URL de la aplicación
+        private const val BASE_URL = "" //URL de la API
         fun create(): ApiService{
             val retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
