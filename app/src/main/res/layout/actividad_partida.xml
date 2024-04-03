@@ -32,7 +32,6 @@
             android:id="@+id/imagenJ1"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:contentDescription="@string/player_image"
             android:src="@drawable/perfil1" />
 
         <TextView
@@ -66,7 +65,6 @@
             android:id="@+id/imagenJ2"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:contentDescription="@string/player_image"
             android:src="@drawable/perfil2" />
 
         <TextView
@@ -100,7 +98,6 @@
             android:id="@+id/imagenJ3"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:contentDescription="@string/player_image"
             android:src="@drawable/perfil3" />
 
         <TextView
@@ -134,7 +131,6 @@
             android:id="@+id/imagenJ4"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:contentDescription="@string/player_image"
             android:src="@drawable/perfil4" />
 
         <TextView

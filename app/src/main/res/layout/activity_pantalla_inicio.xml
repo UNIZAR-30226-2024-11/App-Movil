@@ -108,7 +108,7 @@
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/Logotipo_no_rasterizado" />
+        android:src="@drawable/logotipo_no_rasterizado" />
 
     <!-- Botones para iniciar partidas -->
     <LinearLayout
