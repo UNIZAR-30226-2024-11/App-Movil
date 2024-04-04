@@ -4,9 +4,12 @@ import com.example.unograham.model.Friend
 import com.example.unograham.io.response.FriendRequestResponse
 import retrofit2.Call
 import com.example.unograham.io.response.LoginResponse
+import com.example.unograham.io.response.PartidasGanadasResponse
 import com.example.unograham.io.response.RegisterResponse
+import com.example.unograham.model.User
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
 
@@ -36,13 +39,20 @@ interface ApiService {
     fun removeFriend(@Query("user_id") userId: String, @Query("friend_id") friendId: String): Call<FriendRequestResponse>
 
     //Obtener lista de amigos
-    @POST("get_friends")
+    @GET("get_friends")
     fun getFriends(@Query("user_id") userId: String): Call<List<Friend>>
 
     // Método para obtener las solicitudes de amistad
-    @POST("get_friend_requests")
+    @GET("get_friend_requests")
     fun getFriendRequests(@Query("user_id") userId: String): Call<List<Friend>>
 
+    // Obtener el número de partidas ganadas por un usuario
+    @GET("get_user_wins")
+    fun getUserWins(@Query("user_id") userId: String): Call<PartidasGanadasResponse>
+
+    // Obtener información del usuario por su ID
+    @GET("get_user")
+    fun getUser(@Query("username") username: String): Call<User>
 
     companion object Factory {
         private const val BASE_URL = "http://your_api_base_url.com/"

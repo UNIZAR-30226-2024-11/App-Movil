@@ -1,11 +1,10 @@
+package com.example.unograham
+
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.unograham.PantallaInicioActivity
-import com.example.unograham.R
-import com.example.unograham.SolicitudesAmigosActivity
 import com.example.unograham.io.ApiService
 import com.example.unograham.io.response.FriendRequestResponse
 import com.example.unograham.model.Friend
@@ -81,7 +80,7 @@ class AmigosActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val amigos = response.body()
                     if (amigos != null) {
-                        mostrarAmigos(amigos)
+                        mostrarAmigos(userId,amigos)
                     }
                 } else {
                     Toast.makeText(applicationContext, "Error al obtener la lista de amigos", Toast.LENGTH_SHORT).show()
@@ -94,7 +93,7 @@ class AmigosActivity : AppCompatActivity() {
         })
     }
 
-    private fun mostrarAmigos(amigos: List<Friend>) {
+    private fun mostrarAmigos(userId: String, amigos: List<Friend>) {
         val amigosLayout = findViewById<LinearLayout>(R.id.avatarsGridLayout)
 
         for (amigo in amigos) {
@@ -103,7 +102,49 @@ class AmigosActivity : AppCompatActivity() {
             val nombreAmigoTextView = amigoView.findViewById<TextView>(R.id.nombreAmigoTextView)
             nombreAmigoTextView.text = amigo.username
 
+            // Cargar la imagen de perfil del amigo
+            val avatarImageView = amigoView.findViewById<ImageView>(R.id.avatarImageView)
+            val resourceId = resources.getIdentifier(amigo.profileImage, "drawable", packageName)
+            if (resourceId != 0) {
+                avatarImageView.setImageResource(resourceId)
+            } else {
+                // Si no se encuentra la imagen, mostrar una imagen predeterminada o un mensaje de error
+                //avatarImageView.setImageResource(R.drawable.default_avatar)
+                // También puedes mostrar un mensaje de error
+                Toast.makeText(applicationContext, "No se encontró la imagen de perfil para ${amigo.username}", Toast.LENGTH_SHORT).show()
+            }
+
+            // Agregar un listener al botón de eliminar amigo
+            val deleteFriendButton = amigoView.findViewById<ImageButton>(R.id.deleteFriendButton)
+            deleteFriendButton.setOnClickListener {
+                // Eliminar el amigo de la lista
+                amigosLayout.removeView(amigoView)
+                // Notificar a la API sobre la eliminación del amigo (aquí debes llamar al método correspondiente en ApiService)
+                eliminarAmigo(userId,amigo.username)
+
+            }
+
             amigosLayout.addView(amigoView)
         }
     }
+
+    private fun eliminarAmigo(username: String, amigoUsername: String) {
+        // Llamar al método de la API para eliminar al amigo
+        apiService.removeFriend(username,amigoUsername).enqueue(object : Callback<FriendRequestResponse> {
+            override fun onResponse(call: Call<FriendRequestResponse>, response: Response<FriendRequestResponse>) {
+                if (response.isSuccessful) {
+                    // La eliminación fue exitosa, puedes realizar acciones adicionales si es necesario
+                } else {
+                    // Manejar errores de respuesta si la eliminación falla
+                    Toast.makeText(applicationContext, "Error al eliminar amigo", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<FriendRequestResponse>, t: Throwable) {
+                // Manejar errores de conexión o solicitud
+                Toast.makeText(applicationContext, "Error en la solicitud: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
 }

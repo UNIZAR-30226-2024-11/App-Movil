@@ -1,4 +1,3 @@
-<!-- activity_item_amigos.xml -->
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -10,17 +9,24 @@
         android:id="@+id/avatarImageView"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/default_avatar"
-        android:scaleType="centerCrop"
-        android:layout_marginEnd="16dp"/>
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/nombreAmigoTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:textSize="18sp"
         android:textColor="@color/black"
         android:text="Nombre del amigo"
         android:layout_gravity="center_vertical"/>
+
+    <ImageButton
+        android:id="@+id/deleteFriendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/eliminar"
+        android:background="@android:color/transparent"/>
 
 </LinearLayout>
