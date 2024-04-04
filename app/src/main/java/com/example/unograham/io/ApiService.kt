@@ -1,6 +1,6 @@
 package com.example.unograham.io
 
-import com.example.unograham.io.response.Friend
+import com.example.unograham.model.Friend
 import com.example.unograham.io.response.FriendRequestResponse
 import retrofit2.Call
 import com.example.unograham.io.response.LoginResponse
@@ -19,18 +19,23 @@ interface ApiService {
     fun postRegister(@Query("user") user: String, @Query("email") email: String, @Query("password") password: String): Call<RegisterResponse>
 
     // Métodos para manejo de amigos
+    //Mandar solicitud de amistad
     @POST("send_friend_request")
     fun sendFriendRequest(@Query("sender_id") senderId: String, @Query("receiver_id") receiverId: String): Call<FriendRequestResponse>
 
+    //Aceptar solicitud de amistad
     @POST("accept_friend_request")
     fun acceptFriendRequest(@Query("sender_id") senderId: String, @Query("receiver_id") receiverId: String): Call<FriendRequestResponse>
 
+    //Rechazar solicitud de amistad
     @POST("reject_friend_request")
     fun rejectFriendRequest(@Query("sender_id") senderId: String, @Query("receiver_id") receiverId: String): Call<FriendRequestResponse>
 
+    //Eliminar amigo
     @POST("remove_friend")
     fun removeFriend(@Query("user_id") userId: String, @Query("friend_id") friendId: String): Call<FriendRequestResponse>
 
+    //Obtener lista de amigos
     @POST("get_friends")
     fun getFriends(@Query("user_id") userId: String): Call<List<Friend>>
 

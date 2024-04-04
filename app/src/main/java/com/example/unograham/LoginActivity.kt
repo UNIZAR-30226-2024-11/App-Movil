@@ -41,6 +41,7 @@ class LoginActivity : AppCompatActivity() {
                                 // Guardar estado de inicio de sesión en SharedPreferences
                                 with(sharedPreferences.edit()) {
                                     putBoolean("is_logged_in", true)
+                                    putString("username", username) // Guardar el nombre de usuario
                                     apply()
                                 }
 

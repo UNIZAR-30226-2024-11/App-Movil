@@ -1,22 +1,109 @@
-package com.example.unograham
-
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageButton
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.unograham.PantallaInicioActivity
+import com.example.unograham.R
+import com.example.unograham.SolicitudesAmigosActivity
+import com.example.unograham.io.ApiService
+import com.example.unograham.io.response.FriendRequestResponse
+import com.example.unograham.model.Friend
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class AmigosActivity : AppCompatActivity() {
+
+    private lateinit var apiService: ApiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_amigos)
 
+        apiService = ApiService.create()
+
         val backArrowButton = findViewById<ImageButton>(R.id.backArrow)
+        val enviarSolicitudButton = findViewById<Button>(R.id.sendRequestButton)
+        val verSolicitudesAmistad = findViewById<Button>(R.id.ButtonSolicitudes)
 
         backArrowButton.setOnClickListener {
             val intent = Intent(this, PantallaInicioActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        enviarSolicitudButton.setOnClickListener {
+            val sharedPreferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE)
+            val username = sharedPreferences.getString("username", "")
+
+            val searchQuery = findViewById<EditText>(R.id.searchEditText).text.toString()
+
+            if (!username.isNullOrEmpty() && !searchQuery.isNullOrEmpty()) {
+                apiService.sendFriendRequest(username!!, searchQuery).enqueue(object : Callback<FriendRequestResponse> {
+                    override fun onResponse(call: Call<FriendRequestResponse>, response: Response<FriendRequestResponse>) {
+                        if (response.isSuccessful) {
+                            // Procesar respuesta exitosa
+                            Toast.makeText(applicationContext, "Solicitud de amistad enviada", Toast.LENGTH_SHORT).show()
+                        } else {
+                            // Manejar error de solicitud
+                            Toast.makeText(applicationContext, "Error en la solicitud", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<FriendRequestResponse>, t: Throwable) {
+                        // Manejar fallo de solicitud
+                        Toast.makeText(applicationContext, "Error en la solicitud: ${t.message}", Toast.LENGTH_SHORT).show()
+                    }
+                })
+            } else {
+                // Mostrar mensaje si los campos están vacíos
+                Toast.makeText(applicationContext, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        verSolicitudesAmistad.setOnClickListener {
+            val intent = Intent(this, SolicitudesAmigosActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        // Obtener la lista de amigos y mostrarlos
+        obtenerYMostrarAmigos()
+    }
+
+    private fun obtenerYMostrarAmigos() {
+        val sharedPreferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE)
+        val userId = sharedPreferences.getString("username", "") ?: ""
+
+        apiService.getFriends(userId).enqueue(object : Callback<List<Friend>> {
+            override fun onResponse(call: Call<List<Friend>>, response: Response<List<Friend>>) {
+                if (response.isSuccessful) {
+                    val amigos = response.body()
+                    if (amigos != null) {
+                        mostrarAmigos(amigos)
+                    }
+                } else {
+                    Toast.makeText(applicationContext, "Error al obtener la lista de amigos", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<List<Friend>>, t: Throwable) {
+                Toast.makeText(applicationContext, "Error en la solicitud: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun mostrarAmigos(amigos: List<Friend>) {
+        val amigosLayout = findViewById<LinearLayout>(R.id.avatarsGridLayout)
+
+        for (amigo in amigos) {
+            val amigoView = layoutInflater.inflate(R.layout.actividad_item_amigos, null)
+
+            val nombreAmigoTextView = amigoView.findViewById<TextView>(R.id.nombreAmigoTextView)
+            nombreAmigoTextView.text = amigo.username
+
+            amigosLayout.addView(amigoView)
         }
     }
 }

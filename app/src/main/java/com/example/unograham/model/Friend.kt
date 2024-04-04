@@ -1,4 +1,4 @@
-package com.example.unograham.io.response
+package com.example.unograham.model
 
 data class Friend(
     val id: String,
