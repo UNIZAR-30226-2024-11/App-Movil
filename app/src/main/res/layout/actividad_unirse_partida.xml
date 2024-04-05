@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbkg"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/backgroundLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <!-- Imagen -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/logotipo_no_rasterizado" />
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logoImageView"
+            android:layout_centerHorizontal="true"
+            android:text="UNIRSE A PARTIDA"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Código de la partida -->
+        <EditText
+            android:id="@+id/gameCodeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTextView"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Código de la partida"
+            android:inputType="text"
+            android:textColor="@color/black" />
+
+        <!-- Botón "Unirse" -->
+        <Button
+            android:id="@+id/joinButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gameCodeEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rounded_button_background"
+            android:text="Unirse" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
