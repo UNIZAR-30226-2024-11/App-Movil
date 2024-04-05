@@ -3,14 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginbkg"
-    android:padding="16dp"
-    android:gravity="center">
+    android:padding="16dp">
 
     <RelativeLayout
         android:id="@+id/backgroundLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:layout_centerInParent="true">
 
         <!-- Imagen -->
         <ImageView
@@ -56,7 +55,76 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/rounded_button_background"
             android:text="Unirse" />
-
     </RelativeLayout>
+
+    <!-- Barra de menú -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_button_background"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="38dp">
+
+        <!-- Botón Ajustes -->
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ajustes"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
+
+        <!-- Botón Amigos -->
+        <ImageButton
+            android:id="@+id/personButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/correo"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
+
+        <!-- Botón Pantalla principal -->
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
+
+        <!-- Botón Tienda -->
+        <ImageButton
+            android:id="@+id/cartButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/tienda"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
+
+        <!-- Botón Cerrar sesión -->
+        <ImageButton
+            android:id="@+id/logoutButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/correo"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
+    </LinearLayout>
 
 </RelativeLayout>
