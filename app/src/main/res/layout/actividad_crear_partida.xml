@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbkg"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:id="@+id/backgroundLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <!-- Imagen -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/logotipo_no_rasterizado" />
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logoImageView"
+            android:layout_centerHorizontal="true"
+            android:text="CREAR PARTIDA"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Código de la partida -->
+        <LinearLayout
+            android:id="@+id/codeLayout"
+            android:layout_width="185dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/titleTextView"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/border_background"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_background"
+                android:text="Código de partida:"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gameCodeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <!-- Botón "Invitar a un amigo" -->
+        <Button
+            android:id="@+id/inviteButton"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTextView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="-1dp"
+            android:background="@drawable/rounded_button_background"
+            android:text="Invitar a un amigo" />
+
+        <!-- ListView para mostrar participantes -->
+        <ListView
+            android:id="@+id/participantsListView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/inviteButton"
+            android:layout_marginTop="20dp"/>
+
+        <!-- Botón "Comenzar" -->
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/participantsListView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rounded_button_background"
+            android:text="Comenzar" />
+    </RelativeLayout>
+
+    <!-- Barra de menú -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_button_background"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="38dp">
+
+        <!-- Botón Ajustes -->
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ajustes"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
+
+        <!-- Botón Amigos -->
+        <ImageButton
+            android:id="@+id/personButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/correo"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
+
+        <!-- Botón Pantalla principal -->
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
+
+        <!-- Botón Tienda -->
+        <ImageButton
+            android:id="@+id/cartButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/tienda"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
+
+        <!-- Botón Cerrar sesión -->
+        <ImageButton
+            android:id="@+id/logoutButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/correo"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
