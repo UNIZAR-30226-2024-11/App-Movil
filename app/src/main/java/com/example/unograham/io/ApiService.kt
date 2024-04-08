@@ -55,7 +55,7 @@ interface ApiService {
     fun getUser(@Query("username") username: String): Call<User>
 
     companion object Factory {
-        private const val BASE_URL = "http://your_api_base_url.com/"
+        private const val BASE_URL = "https://backend-eg2q.onrender.com/"
 
         fun create(): ApiService {
             val retrofit = Retrofit.Builder()
