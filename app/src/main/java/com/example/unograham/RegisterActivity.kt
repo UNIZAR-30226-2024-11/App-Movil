@@ -2,6 +2,7 @@ package com.example.unograham
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -64,13 +65,14 @@ class RegisterActivity : AppCompatActivity() {
                             }
                         } else {
                             // Error en la solicitud
-                            Toast.makeText(this@RegisterActivity, "Error en la solicitud", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@RegisterActivity, "Error en la solicitud 1", Toast.LENGTH_SHORT).show()
                         }
                     }
 
                     override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
                         // Error en la solicitud
-                        Toast.makeText(this@RegisterActivity, "Error en la solicitud: ${t.message}", Toast.LENGTH_SHORT).show()
+                        Log.e("TAG", "Error en la solicitud 2: ${t.message}")
+                        Toast.makeText(this@RegisterActivity, "Error en la solicitud 2: ${t.message}", Toast.LENGTH_SHORT).show()
                     }
                 })
             } else {

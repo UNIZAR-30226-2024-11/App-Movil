@@ -16,9 +16,10 @@ interface ApiService {
     fun postRegister(@Query(value="user") user: String, @Query("email") email: String, @Query(value="contraseña") contraseña: String):
             Call<RegisterResponse>
 
-    companion object Factory{
-        private const val BASE_URL = "https://backend-eg2q.onrender.com:10000/" //URL de la API
-        fun create(): ApiService{
+    companion object {
+        private const val BASE_URL = "https://backend-eg2q.onrender.com:10000/" // URL de la API
+
+        fun create(): ApiService {
             val retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
