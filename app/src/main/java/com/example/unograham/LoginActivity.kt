@@ -11,6 +11,7 @@ import com.example.unograham.RegisterActivity
 import com.example.unograham.databinding.ActivityLoginBinding
 import com.example.unograham.io.ApiService
 import com.example.unograham.io.reponse.LoginResponse
+import com.example.unograham.io.request.LoginRequest
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,8 +35,10 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.username.text.toString()
             val password = binding.password.text.toString()
 
+            val request = LoginRequest(email, password)
+
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                apiService.postlogin(email, password).enqueue(object : Callback<LoginResponse> {
+                apiService.postlogin(request).enqueue(object : Callback<LoginResponse> {
                     override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                         if (response.isSuccessful) {
                             val loginResponse = response.body()
