@@ -31,15 +31,15 @@ class LoginActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE)
 
         binding.loginButton.setOnClickListener {
-            val username = binding.username.text.toString()
+            val email = binding.username.text.toString()
             val password = binding.password.text.toString()
 
-            if (username.isNotEmpty() && password.isNotEmpty()) {
-                apiService.postlogin(username, password).enqueue(object : Callback<LoginResponse> {
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                apiService.postlogin(email, password).enqueue(object : Callback<LoginResponse> {
                     override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                         if (response.isSuccessful) {
                             val loginResponse = response.body()
-                            if (loginResponse != null && loginResponse.success) {
+                            if (loginResponse != null && loginResponse.token != null) {
                                 // Guardar estado de inicio de sesión en SharedPreferences
                                 with(sharedPreferences.edit()) {
                                     putBoolean("is_logged_in", true)
