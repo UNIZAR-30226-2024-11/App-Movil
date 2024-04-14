@@ -6,3 +6,8 @@ data class LoginRequest(
     val email: String,
     val password: String
 )
+
+//interface LoginRequest {
+//    email: string
+//    password: string
+//}

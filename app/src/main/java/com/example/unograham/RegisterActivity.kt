@@ -47,25 +47,37 @@ class RegisterActivity : AppCompatActivity() {
             // Verificar si las contraseñas coinciden
             if (password == confirmPassword) {
                 // Realizar la llamada de registro al servidor
-                apiService.postRegister(username, email, password).enqueue(object : Callback<RegisterResponse> {
+                apiService.postRegister(request).enqueue(object : Callback<RegisterResponse> {
                     override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
                         if (response.isSuccessful) {
                             val registerResponse = response.body()
-                            if (registerResponse != null && registerResponse.success) {
-                                // Registro exitoso
-                                Toast.makeText(this@RegisterActivity, "Registro exitoso", Toast.LENGTH_SHORT).show()
-                                // Redirigir a la pantalla de inicio de sesión
-                                val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                                startActivity(intent)
-                                finish() // Finalizar la actividad actual para evitar volver atrás
-                            } else {
-                                // Error en el registro
-                                Toast.makeText(this@RegisterActivity, "Error en el registro: ${registerResponse?.message}", Toast.LENGTH_SHORT).show()
+                            if (registerResponse != null) {
+                                if (registerResponse.error != "201") {
+                                    // Registro exitoso
+                                    Toast.makeText(this@RegisterActivity, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                                    // Redirigir a la pantalla de inicio de sesión
+                                    val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                                    startActivity(intent)
+                                    finish() // Finalizar la actividad actual para evitar volver atrás
+                                }
+                                else if (registerResponse.error == "400"){
+                                    // Error en el registro
+                                    Toast.makeText(this@RegisterActivity, "Error en el registro: Faltan parámetros", Toast.LENGTH_SHORT).show()
+                                }
+                                else if(registerResponse.error == "500"){
+                                    // Error en la solicitud
+                                    Toast.makeText(this@RegisterActivity, "Error interno en la solicitud", Toast.LENGTH_SHORT).show()
+                                }
+                                else {
+                                    //codigo de error desconocido
+                                    Toast.makeText(this@RegisterActivity, "Error ${registerResponse.error}", Toast.LENGTH_SHORT).show()
+
+                                }
                             }
-                        } else {
-                            // Error en la solicitud
-                            Toast.makeText(this@RegisterActivity, "Error en la solicitud", Toast.LENGTH_SHORT).show()
-                        }
+                                //debug
+                            Toast.makeText(this@RegisterActivity, "Debug: registerResponse = null", Toast.LENGTH_SHORT).show()
+                            }
+
                     }
 
                     override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {

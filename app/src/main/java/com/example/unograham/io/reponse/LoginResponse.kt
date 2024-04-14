@@ -6,6 +6,9 @@ data class LoginResponse(
     //val  user: User,       //detalles del ususario User (User.kt)
     val error: String?,     //si hay algun error
     val token: String?    //token de autenticación
-
-
 )
+
+//interface LoginResponse {
+//    error?: string
+//    token?: string
+//}
