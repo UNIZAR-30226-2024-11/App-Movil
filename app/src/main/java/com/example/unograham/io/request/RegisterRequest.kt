@@ -1,4 +1,4 @@
-package com.example.unograham.io.response
+package com.example.unograham.io.request
 
 data class RegisterRequest(
     val username: String,

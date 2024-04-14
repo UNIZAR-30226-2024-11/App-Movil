@@ -4,11 +4,10 @@ import retrofit2.Call
 import com.example.unograham.io.reponse.LoginResponse
 import com.example.unograham.io.response.RegisterResponse
 import com.example.unograham.io.request.LoginRequest
-import com.example.unograham.io.response.RegisterRequest
+import com.example.unograham.io.request.RegisterRequest
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.POST
-import retrofit2.http.Query
 import retrofit2.http.Body
 
 interface ApiService {
