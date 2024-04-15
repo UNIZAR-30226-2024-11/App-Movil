@@ -1,4 +1,4 @@
-package com.example.unograham
+package com.example.unograham.activities
 
 import android.content.Intent
 import android.os.Bundle

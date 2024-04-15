@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@drawable/loginbkg"
     android:padding="16dp"
-    tools:context=".PantallaInicioActivity">
+    tools:context=".activities.PantallaInicioActivity">
 
     <!-- Sección del perfil -->
     <LinearLayout

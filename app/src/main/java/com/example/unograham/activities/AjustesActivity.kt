@@ -1,15 +1,16 @@
-package com.example.unograham
+package com.example.unograham.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import com.example.unograham.R
 
-class AmigosActivity : AppCompatActivity() {
+class AjustesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_amigos)
+        setContentView(R.layout.activity_ajustes)
 
         val backArrowButton = findViewById<ImageButton>(R.id.backArrow)
 

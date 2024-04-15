@@ -1,12 +1,11 @@
-package com.example.unograham
+package com.example.unograham.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.unograham.databinding.ActivityLoginBinding
-import android.content.Context
 import android.widget.Button
 import android.widget.ImageButton
+import com.example.unograham.R
 
 class PantallaInicioActivity : AppCompatActivity() {
 

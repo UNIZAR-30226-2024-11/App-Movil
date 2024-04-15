@@ -1,9 +1,10 @@
-package com.example.unograham
+package com.example.unograham.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import com.example.unograham.R
 
 class TiendaActivity : AppCompatActivity() {
 

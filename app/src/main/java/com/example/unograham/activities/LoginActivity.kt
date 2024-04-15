@@ -1,4 +1,4 @@
-package com.example.unograham;
+package com.example.unograham.activities;
 
 import android.content.Context
 import android.content.Intent
@@ -6,8 +6,6 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.unograham.PantallaInicioActivity
-import com.example.unograham.RegisterActivity
 import com.example.unograham.databinding.ActivityLoginBinding
 import com.example.unograham.io.ApiService
 import com.example.unograham.io.reponse.LoginResponse
@@ -15,6 +13,7 @@ import com.example.unograham.io.request.LoginRequest
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.example.unograham.utils.Preferencias
 
 class LoginActivity : AppCompatActivity() {
 
@@ -29,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         apiService = ApiService.create()
-        sharedPreferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE)
+        //sharedPreferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE)
 
         binding.loginButton.setOnClickListener {
             val email = binding.username.text.toString()
@@ -43,11 +42,13 @@ class LoginActivity : AppCompatActivity() {
                         if (response.isSuccessful) {
                             val loginResponse = response.body()
                             if (loginResponse != null && loginResponse.token != null) {
-                                // Guardar estado de inicio de sesión en SharedPreferences
-                                with(sharedPreferences.edit()) {
-                                    putBoolean("is_logged_in", true)
-                                    apply()
-                                }
+
+                                // Guardar estado de inicio de sesión y atributos del usuario en SharedPreferences
+                                Preferencias.guardarValorBooleano("is_logged_in", true)
+    //DESCOMENTAR ESTO CUANDO EL BACKEND HAGA BIEN LA RESPUESTA 
+                                //Preferencias.guardarValorEntero("avatar", loginResponse.User.avatar)
+                                //Preferencias.guardarValorString("Nombre", loginResponse.User.nombre)
+                                //...
 
                                 val intent = Intent(this@LoginActivity, PantallaInicioActivity::class.java)
                                 startActivity(intent)

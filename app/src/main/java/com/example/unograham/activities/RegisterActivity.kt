@@ -1,16 +1,13 @@
-package com.example.unograham
+package com.example.unograham.activities
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.unograham.LoginActivity
+import com.example.unograham.R
 import com.example.unograham.io.ApiService
-import com.example.unograham.io.request.LoginRequest
 import com.example.unograham.io.response.RegisterResponse
 import com.example.unograham.io.request.RegisterRequest
 import retrofit2.Call
