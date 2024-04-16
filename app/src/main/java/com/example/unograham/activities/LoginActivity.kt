@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
 
                                 // Guardar estado de inicio de sesión y atributos del usuario en SharedPreferences
                                 Preferencias.guardarValorBooleano("is_logged_in", true)
-    //DESCOMENTAR ESTO CUANDO EL BACKEND HAGA BIEN LA RESPUESTA 
+    //DESCOMENTAR ESTO CUANDO EL BACKEND HAGA BIEN LA RESPUESTA, IGUAL HAY QUE MODIFICAR User.kt
                                 //Preferencias.guardarValorEntero("avatar", loginResponse.User.avatar)
                                 //Preferencias.guardarValorString("Nombre", loginResponse.User.nombre)
                                 //...
