@@ -27,6 +27,22 @@
         android:orientation="vertical">
 
         <!-- Contenido del jugador 1 -->
+        <!-- TextView para mostrar el número de cartas -->
+        <TextView
+            android:id="@+id/numCartasJ1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/imagenJ1"
+            android:layout_alignTop="@id/imagenJ1"
+            android:layout_marginEnd="-6dp"
+            android:layout_marginTop="-6dp"
+            android:padding="2dp"
+            android:text="1"
+            android:textColor="@android:color/black"
+            android:background="@drawable/rectangulo_blanco"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
 
         <ImageView
             android:id="@+id/imagenJ1"
@@ -60,6 +76,22 @@
         android:orientation="vertical">
 
         <!-- Contenido del jugador 2 -->
+        <!-- TextView para mostrar el número de cartas -->
+        <TextView
+            android:id="@+id/numCartasJ2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/imagenJ1"
+            android:layout_alignTop="@id/imagenJ1"
+            android:layout_marginEnd="-6dp"
+            android:layout_marginTop="-6dp"
+            android:padding="2dp"
+            android:text="1"
+            android:textColor="@android:color/black"
+            android:background="@drawable/rectangulo_blanco"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
 
         <ImageView
             android:id="@+id/imagenJ2"
@@ -93,6 +125,22 @@
         android:orientation="vertical">
 
         <!-- Contenido del jugador 3 -->
+        <!-- TextView para mostrar el número de cartas -->
+        <TextView
+            android:id="@+id/numCartasJ3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/imagenJ1"
+            android:layout_alignTop="@id/imagenJ1"
+            android:layout_marginEnd="-6dp"
+            android:layout_marginTop="-6dp"
+            android:padding="2dp"
+            android:text="1"
+            android:textColor="@android:color/black"
+            android:background="@drawable/rectangulo_blanco"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
 
         <ImageView
             android:id="@+id/imagenJ3"
@@ -112,38 +160,103 @@
 
     </LinearLayout>
 
-    <!-- Contenedor del jugador 4 -->
-    <LinearLayout
-        android:id="@+id/player4Layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <!-- Contenido del jugador 4 -->
-
-        <ImageView
-            android:id="@+id/imagenJ4"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/perfil4" />
-
-        <TextView
-            android:id="@+id/nicknameJ4"
+        <!-- Contenedor para los botones "Votar" y "Chat" -->
+        <LinearLayout
+            android:id="@+id/botonesSuperiorDerecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Nickname J4"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp">
 
-    </LinearLayout>
+            <!-- Botón "Votar" -->
+            <Button
+                android:id="@+id/botonVotar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Votar"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:background="@drawable/boton_redondo"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"/>
+
+            <!-- Botón "Chat" -->
+            <Button
+                android:id="@+id/botonChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chat"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:background="@drawable/boton_redondo"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Nuevo contenedor para las cartas del jugador 4 -->
+        <LinearLayout
+            android:id="@+id/cartasJugador4Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="16dp"
+            android:orientation="horizontal">
+
+            <!-- Botón a la izquierda de las cartas -->
+            <Button
+                android:id="@+id/botonUno"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="¡UNO!"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:background="@drawable/boton_redondo"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"/>
+
+            <!-- Primera carta -->
+            <ImageView
+                android:layout_marginLeft="40dp"
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+                android:src="@drawable/azul2" />
+
+            <!-- Segunda carta -->
+
+            <!-- Tercera carta -->
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/azul2" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/azul2" />
+
+            <!-- Agrega más cartas según sea necesario -->
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
 
     <!-- Tacos de cartas -->
     <LinearLayout
