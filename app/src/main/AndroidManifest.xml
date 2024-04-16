@@ -39,6 +39,14 @@
             android:exported="false" />
 
         <activity
+            android:name=".PartidaActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".UnirsePartidaActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

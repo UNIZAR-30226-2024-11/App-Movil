@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         // Postergar la transición a la actividad de inicio de sesión después de 1500 milisegundos (1.5 segundos)
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, UnirsePartidaActivity::class.java)
             startActivity(intent)
             finish()
         }, 1500)
