@@ -17,7 +17,7 @@ class TiendaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_tienda)
 
         cargarAvatar(,1)
-        
+
 
         val backArrowButton = findViewById<ImageButton>(R.id.backArrow)
 
@@ -32,10 +32,16 @@ class TiendaActivity : AppCompatActivity() {
 
 fun elegirAvatar(avatarImageView: ImageView) {
     // ENVIAR AL BACKEND UNA ACTUALIZACION DEL AVATAR CADA VEZ QUE SE CAMBIE EN LOCAL O SOLO AL FINAL??
-    val avatarId = avatarImageView.tag as? Int
+    var avatarId = avatarImageView.tag as? Int
+    if (avatarId == null) {
+        avatarId = 1
+    }
     Preferencias.guardarValorEntero("avatar", avatarId)
+    quitarEscalaDeGrises(avatarImageView)
+    //actualizar backend?
 }
 
+//Para asociar a cada avatar un id entero y poder tener guardado cual se esta usando, y poder recibir y enviar al backend
 fun cargarAvatar(avatarImageView: ImageView, avatarId: Int) {
     avatarImageView.setImageResource(avatarId)
     avatarImageView.tag = avatarId // Guardar el ID del avatar como una etiqueta en el ImageView
@@ -45,6 +51,14 @@ fun cargarAvatar(avatarImageView: ImageView, avatarId: Int) {
 fun aplicarEscalaDeGrises(avatar: ImageView) {
     val matrix = ColorMatrix()
     matrix.setSaturation(0f) // Configurar la saturación a 0 para obtener una imagen en escala de grises
+
+    val filter = ColorMatrixColorFilter(matrix)
+    avatar.colorFilter = filter
+}
+
+fun quitarEscalaDeGrises(avatar: ImageView) {
+    val matrix = ColorMatrix()
+    matrix.setSaturation(1f) // Configurar la saturación a 0 para obtener una imagen en escala de grises
 
     val filter = ColorMatrixColorFilter(matrix)
     avatar.colorFilter = filter
