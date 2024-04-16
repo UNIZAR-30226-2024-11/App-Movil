@@ -10,14 +10,14 @@ import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
 import com.example.unograham.utils.Preferencias
 
+
 class TiendaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tienda)
 
-        cargarAvatar(,1)
-
+       cargarAvatares()
 
         val backArrowButton = findViewById<ImageButton>(R.id.backArrow)
 
@@ -27,6 +27,27 @@ class TiendaActivity : AppCompatActivity() {
             finish()
         }
     }
+    //inicializar el id de los avatares,
+    private fun cargarAvatares(){
+        var avatarImageView = findViewById<ImageView>(R.id.avatar1ImageView)
+        cargarAvatar(avatarImageView, 1)
+        avatarImageView = findViewById<ImageView>(R.id.avatar2ImageView)
+        cargarAvatar(avatarImageView, 2)
+        avatarImageView = findViewById<ImageView>(R.id.avatar3ImageView)
+        cargarAvatar(avatarImageView, 3)
+        avatarImageView = findViewById<ImageView>(R.id.avatar4ImageView)
+        cargarAvatar(avatarImageView, 4)
+        avatarImageView = findViewById<ImageView>(R.id.avatar5ImageView)
+        cargarAvatar(avatarImageView, 5)
+        avatarImageView = findViewById<ImageView>(R.id.avatar6ImageView)
+        cargarAvatar(avatarImageView, 6)
+    }
+//    private fun inicializarAvatares(){
+//        cargarAvatares()
+//        aplicarEscalaDeGrises( a todos)
+//        quitarEscalaDeGrises al que tengamos guardado en obtenerValorEntero(avatar)
+//    }
+
 }
 
 
@@ -64,24 +85,4 @@ fun quitarEscalaDeGrises(avatar: ImageView) {
     avatar.colorFilter = filter
 }
 
-fun avatarToInt(avatarImageView: ImageView) :Int {
 
-    val option = avatarImageView.
-
-    when (option) {
-         -> {
-            return 1
-        }
-         -> {
-            return 2
-        }
-         -> {
-           return 3
-        }
-        else -> {
-            println("Opción no reconocida")
-            // Código para cualquier otro caso
-        }
-    }
-    return
-}
