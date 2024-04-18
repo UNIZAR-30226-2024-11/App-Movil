@@ -17,8 +17,10 @@ class TiendaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tienda)
 
-        cargarAvatares()
+        //cargarAvatares()  no funciona bien
         aplicarEscalaDeGrises(findViewById<ImageView>(R.id.avatar1ImageView))
+
+
 
 
 
@@ -46,11 +48,6 @@ class TiendaActivity : AppCompatActivity() {
         avatarImageView = findViewById<ImageView>(R.id.avatar6ImageView)
         cargarAvatar(avatarImageView, 6)
     }
-//    private fun inicializarAvatares(){
-//        cargarAvatares()
-//        aplicarEscalaDeGrises( a todos)
-//        quitarEscalaDeGrises al que tengamos guardado en obtenerValorEntero(avatar)
-//    }
 
 }
 
@@ -83,7 +80,7 @@ fun aplicarEscalaDeGrises(avatar: ImageView) {
 
 fun quitarEscalaDeGrises(avatar: ImageView) {
     val matrix = ColorMatrix()
-    matrix.setSaturation(1f) // Configurar la saturación a 0 para obtener una imagen en escala de grises
+    matrix.setSaturation(1f) // Configurar la saturación a 1 para quitar la escala de grises
 
     val filter = ColorMatrixColorFilter(matrix)
     avatar.colorFilter = filter

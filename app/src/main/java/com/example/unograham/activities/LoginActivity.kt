@@ -1,4 +1,4 @@
-package com.example.unograham.activities;
+package com.example.unograham.activities
 
 import android.content.Context
 import android.content.Intent
@@ -46,6 +46,7 @@ class LoginActivity : AppCompatActivity() {
                                 // Guardar estado de inicio de sesión y atributos del usuario en SharedPreferences
                                 Preferencias.guardarValorBooleano("is_logged_in", true)
     //DESCOMENTAR ESTO CUANDO EL BACKEND HAGA BIEN LA RESPUESTA, IGUAL HAY QUE MODIFICAR User.kt
+                                Preferencias.guardarValorEntero("avatar", 2)
                                 //Preferencias.guardarValorEntero("avatar", loginResponse.User.avatar)
                                 //Preferencias.guardarValorString("Nombre", loginResponse.User.nombre)
                                 //...

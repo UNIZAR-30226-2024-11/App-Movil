@@ -12,7 +12,7 @@
             android:id="@+id/backgroundLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/orange_to_red_degradado"
+            android:background="@drawable/fondo_cartas_vertical"
             android:padding="16dp">
 
             <ImageButton
@@ -125,25 +125,48 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/decksTitleTextView"
-                android:columnCount="2"
-                android:rowCount="1"
-                android:alignmentMode="alignMargins"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:alignmentMode="alignMargins"
+                android:columnCount="3"
+                android:rowCount="1">
 
                 <!-- Imágenes de barajas -->
                 <ImageView
                     android:id="@+id/deck1ImageView"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="86dp"
+                    android:layout_height="107dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:src="@drawable/baraja1" />
 
-            <!-- Agrega aquí las imágenes de las barajas restantes siguiendo el mismo patrón -->
+                <ImageView
+                    android:id="@+id/deck2ImageView"
+                    android:layout_width="86dp"
+                    android:layout_height="107dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/baraja1" />
+
+                    <ImageView
+                    android:id="@+id/deck3ImageView"
+                    android:layout_width="86dp"
+                    android:layout_height="107dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/baraja1" />
+
+
+
+
+                <!-- Agrega aquí las imágenes de las barajas restantes siguiendo el mismo patrón -->
 
             </GridLayout>
         </RelativeLayout>
