@@ -17,7 +17,11 @@ class TiendaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tienda)
 
-       cargarAvatares()
+        cargarAvatares()
+        aplicarEscalaDeGrises(findViewById<ImageView>(R.id.avatar1ImageView))
+
+
+
 
         val backArrowButton = findViewById<ImageButton>(R.id.backArrow)
 
