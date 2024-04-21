@@ -37,7 +37,7 @@ class PantallaInicioActivity : AppCompatActivity() {
 
         createGameButton.setOnClickListener {
             // Lógica para el botón "Crear Partida"
-            val intent = Intent(this, UnirsePartidaActivity::class.java)
+            val intent = Intent(this, CrearPartidaActivity::class.java)
             startActivity(intent)
             finish()
         }

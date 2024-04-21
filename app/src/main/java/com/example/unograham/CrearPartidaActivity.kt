@@ -6,15 +6,14 @@ import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.unograham.R
+class CrearPartidaActivity : AppCompatActivity() {
 
-class UnirsePartidaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.actividad_unirse_partida)
+        setContentView(R.layout.actividad_crear_partida)
 
-        // Obtener referencia al botón "Unirse"
-        val joinButton = findViewById<Button>(R.id.joinButton)
-
+        // Obtener referencia al botón "Comenzar"
+        val startButton = findViewById<Button>(R.id.startButton)
 
         val backArrowButton = findViewById<ImageButton>(R.id.backArrow)
 
@@ -24,13 +23,13 @@ class UnirsePartidaActivity : AppCompatActivity() {
             finish()
         }
 
-
         // Agregar un OnClickListener al botón "Unirse"
-        joinButton.setOnClickListener {
+        startButton.setOnClickListener {
             // Crear un Intent para iniciar la actividad PartidaActivity
             val intent = Intent(this, PartidaActivity::class.java)
             // Iniciar la actividad PartidaActivity
             startActivity(intent)
         }
     }
+
 }

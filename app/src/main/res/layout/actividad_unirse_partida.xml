@@ -5,11 +5,23 @@
     android:background="@drawable/fondo_cartas_vertical"
     android:padding="16dp">
 
+    <ImageButton
+        android:id="@+id/backArrow"
+        android:layout_width="20dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/flecha" />
+
     <RelativeLayout
         android:id="@+id/backgroundLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
+
 
         <!-- Imagen -->
         <ImageView
@@ -84,23 +96,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/correo"
+            android:src="@drawable/person"
             android:scaleType="centerInside"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:layout_marginEnd="4dp"/>
 
-        <!-- Botón Pantalla principal -->
-        <ImageButton
-            android:id="@+id/homeButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/home"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:layout_marginEnd="4dp"/>
+
 
         <!-- Botón Tienda -->
         <ImageButton

@@ -67,5 +67,12 @@ class PerfilActivity : AppCompatActivity() {
                         startActivity(Intent(this, LoginActivity::class.java))
                         finish()
                 }
+
         }
+        override fun onBackPressed() {
+                super.onBackPressed() // Llama al método de la clase base para asegurar el comportamiento predeterminado
+                finish()
+                // Puedes agregar cualquier acción adicional que desees realizar aquí
+        }
+
 }

@@ -8,69 +8,54 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.unograham.R
-import com.example.unograham.io.ApiService
-import com.example.unograham.io.response.FriendRequestResponse
-import com.example.unograham.model.Friend
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class SolicitudesAmigosActivity : AppCompatActivity() {
-
-    private lateinit var apiService: ApiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.actividad_solicitudes_amistad)
 
-        apiService = ApiService.create()
-
         obtenerYMostrarSolicitudesAmistad()
     }
 
     private fun obtenerYMostrarSolicitudesAmistad() {
-        val sharedPreferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE)
-        val userId = sharedPreferences.getString("username", "") ?: ""
+        // Simulación de obtención de solicitudes de amistad
+        val solicitudes = obtenerSolicitudesDeAmistad()
 
-        apiService.getFriendRequests(userId).enqueue(object : Callback<List<Friend>> {
-            override fun onResponse(call: Call<List<Friend>>, response: Response<List<Friend>>) {
-                if (response.isSuccessful) {
-                    val solicitudes = response.body()
-                    if (solicitudes != null) {
-                        mostrarSolicitudes(solicitudes)
-                    }
-                } else {
-                    Toast.makeText(applicationContext, "Error al obtener las solicitudes de amistad", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<List<Friend>>, t: Throwable) {
-                Toast.makeText(applicationContext, "Error en la solicitud: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
+        if (solicitudes.isNotEmpty()) {
+            mostrarSolicitudes(solicitudes)
+        } else {
+            Toast.makeText(applicationContext, "No hay solicitudes de amistad pendientes", Toast.LENGTH_SHORT).show()
+        }
     }
 
-    private fun mostrarSolicitudes(solicitudes: List<Friend>) {
+    private fun obtenerSolicitudesDeAmistad(): List<String> {
+        // Aquí se puede implementar la lógica para obtener las solicitudes de amistad
+        // Por ejemplo, obtener datos de SharedPreferences, base de datos local, etc.
+        // En esta simulación, se devuelve una lista de ejemplo
+        return listOf("Usuario1", "Usuario2", "Usuario3")
+    }
+
+    private fun mostrarSolicitudes(solicitudes: List<String>) {
         val solicitudesLayout = findViewById<LinearLayout>(R.id.solicitudesLayout)
 
         for (solicitud in solicitudes) {
             val solicitudView = layoutInflater.inflate(R.layout.activity_item_solicitudes_pendientes, null)
 
             val usernameTextView = solicitudView.findViewById<TextView>(R.id.requesterNameTextView)
-            usernameTextView.text = solicitud.username
+            usernameTextView.text = solicitud
 
-            val avatarImageView = solicitudView.findViewById<ImageView>(R.id.requesterProfileImage)
+            // Aquí se puede cargar la imagen de perfil del solicitante, si es necesario
 
             val acceptButton = solicitudView.findViewById<Button>(R.id.acceptButton)
             acceptButton.setOnClickListener {
-                aceptarSolicitudAmistad(solicitud.username)
+                aceptarSolicitudAmistad(solicitud)
                 solicitudesLayout.removeView(solicitudView)
             }
 
             val rejectButton = solicitudView.findViewById<Button>(R.id.declineButton)
             rejectButton.setOnClickListener {
-                rechazarSolicitudAmistad(solicitud.username)
+                rechazarSolicitudAmistad(solicitud)
                 solicitudesLayout.removeView(solicitudView)
             }
 
@@ -79,47 +64,13 @@ class SolicitudesAmigosActivity : AppCompatActivity() {
     }
 
     private fun aceptarSolicitudAmistad(username: String) {
-        val sharedPreferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE)
-        val userId = sharedPreferences.getString("username", "") ?: ""
-
-        apiService.acceptFriendRequest(userId, username).enqueue(object : Callback<FriendRequestResponse> {
-            override fun onResponse(call: Call<FriendRequestResponse>, response: Response<FriendRequestResponse>) {
-                if (response.isSuccessful) {
-                    // La solicitud de amistad fue aceptada correctamente
-                    Toast.makeText(applicationContext, "Solicitud de amistad aceptada para $username", Toast.LENGTH_SHORT).show()
-                } else {
-                    // Error al aceptar la solicitud de amistad
-                    Toast.makeText(applicationContext, "Error al aceptar la solicitud de amistad para $username", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<FriendRequestResponse>, t: Throwable) {
-                // Manejar error de conexión o solicitud
-                Toast.makeText(applicationContext, "Error en la solicitud: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
+        // Aquí se puede implementar la lógica para aceptar la solicitud de amistad
+        Toast.makeText(applicationContext, "Solicitud de amistad aceptada para $username", Toast.LENGTH_SHORT).show()
     }
 
     private fun rechazarSolicitudAmistad(username: String) {
-        val sharedPreferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE)
-        val userId = sharedPreferences.getString("username", "") ?: ""
-
-        apiService.rejectFriendRequest(userId, username).enqueue(object : Callback<FriendRequestResponse> {
-            override fun onResponse(call: Call<FriendRequestResponse>, response: Response<FriendRequestResponse>) {
-                if (response.isSuccessful) {
-                    // La solicitud de amistad fue rechazada correctamente
-                    Toast.makeText(applicationContext, "Solicitud de amistad rechazada para $username", Toast.LENGTH_SHORT).show()
-                } else {
-                    // Error al rechazar la solicitud de amistad
-                    Toast.makeText(applicationContext, "Error al rechazar la solicitud de amistad para $username", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<FriendRequestResponse>, t: Throwable) {
-                // Manejar error de conexión o solicitud
-                Toast.makeText(applicationContext, "Error en la solicitud: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
+        // Aquí se puede implementar la lógica para rechazar la solicitud de amistad
+        Toast.makeText(applicationContext, "Solicitud de amistad rechazada para $username", Toast.LENGTH_SHORT).show()
     }
 
 }

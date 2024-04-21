@@ -11,6 +11,7 @@
     android:gravity="center"
     tools:context=".PantallaInicioActivity">
 
+
     <!-- Sección del perfil -->
     <LinearLayout
         android:id="@+id/profileLayout"
@@ -20,7 +21,9 @@
         android:gravity="center_vertical"
         android:background="@drawable/rounded_button_background"
         android:padding="16dp"
-        android:elevation="8dp">
+        android:elevation="8dp"
+        android:layout_below="@id/backArrow">
+
 
         <!-- Imagen de perfil -->
         <ImageButton
@@ -29,6 +32,7 @@
             android:layout_height="100dp"
             android:layout_marginEnd="16dp"
             android:background="@android:color/transparent"
+            android:src="@drawable/perfil1"
             android:scaleType="centerCrop" />
 
         <LinearLayout
@@ -200,7 +204,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/correo"
+            android:src="@drawable/person"
             android:scaleType="centerInside"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
