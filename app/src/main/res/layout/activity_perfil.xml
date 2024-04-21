@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/loginbkg"
+    android:background="@drawable/fondo_cartas_vertical"
     android:padding="16dp"
     android:gravity="center"
     tools:context=".PantallaInicioActivity">

@@ -37,7 +37,9 @@ class PantallaInicioActivity : AppCompatActivity() {
 
         createGameButton.setOnClickListener {
             // Lógica para el botón "Crear Partida"
-            // Por ejemplo, puedes abrir una nueva actividad o realizar alguna acción
+            val intent = Intent(this, UnirsePartidaActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         joinGameButton.setOnClickListener {
@@ -82,9 +84,10 @@ class PantallaInicioActivity : AppCompatActivity() {
             finish()
         }
 
-        obtenerYGuardarPerfil()
+        //obtenerYGuardarPerfil()
     }
 
+    /*
     private fun obtenerYGuardarPerfil() {
         val sharedPreferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE)
         val userId = sharedPreferences.getString("username", "") ?: ""
@@ -124,5 +127,7 @@ class PantallaInicioActivity : AppCompatActivity() {
             apply()
         }
     }
+
+     */
 
 }

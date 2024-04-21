@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/loginbkg"
+    android:background="@drawable/fondo_cartas_vertical"
     android:padding="16dp"
     tools:context=".PantallaInicioActivity">
 
@@ -28,6 +28,7 @@
             android:layout_height="100dp"
             android:layout_marginEnd="16dp"
             android:background="@android:color/transparent"
+            android:src="@drawable/perfil1"
             android:scaleType="centerCrop" />
 
         <LinearLayout

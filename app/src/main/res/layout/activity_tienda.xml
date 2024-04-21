@@ -12,7 +12,7 @@
             android:id="@+id/backgroundLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/orange_to_red_degradado"
+            android:background="@drawable/fondo_cartas_vertical"
             android:padding="16dp">
 
             <ImageButton
