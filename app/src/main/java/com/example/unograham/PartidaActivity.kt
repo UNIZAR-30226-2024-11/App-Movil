@@ -15,6 +15,7 @@ class PartidaActivity : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE // Esta línea establece la orientación horizontal
         setContentView(R.layout.actividad_partida)
 
+        /*
         // Obtener referencias a las vistas
         val tacoRobar = findViewById<ImageView>(R.id.tacoRobar)
         val tacoJugadas = findViewById<ImageView>(R.id.tacoJugadas)
@@ -49,5 +50,7 @@ class PartidaActivity : AppCompatActivity() {
         //botonUno.setOnClickListener {
             // Aquí puedes agregar la lógica para el botón ¡UNO!
         //}
+        */
+         
     }
 }
