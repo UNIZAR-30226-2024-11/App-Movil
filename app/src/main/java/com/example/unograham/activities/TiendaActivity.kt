@@ -18,9 +18,7 @@ class TiendaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_tienda)
 
         //cargarAvatares()  no funciona bien
-        aplicarEscalaDeGrises(findViewById<ImageView>(R.id.avatar1ImageView))
-
-
+        //aplicarEscalaDeGrises(findViewById<ImageView>(R.id.avatar1ImageView))
 
 
 
@@ -32,6 +30,11 @@ class TiendaActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    private fun elegirAvatar(avatar: Int, avatarImageView: ImageView){
+        Preferencias.guardarValorEntero("avatar_en_uso", avatar)
+
     }
     //inicializar el id de los avatares,
     private fun cargarAvatares(){
@@ -50,6 +53,7 @@ class TiendaActivity : AppCompatActivity() {
     }
 
 }
+
 
 
 fun elegirAvatar(avatarImageView: ImageView) {
@@ -87,3 +91,5 @@ fun quitarEscalaDeGrises(avatar: ImageView) {
 }
 
 
+//font-family: Raleway, serif;
+//"https://fonts.googleapis.com/css?family=Raleway:400,400i,700"

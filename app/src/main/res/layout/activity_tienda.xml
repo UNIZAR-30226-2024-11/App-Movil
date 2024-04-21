@@ -61,59 +61,280 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp">
 
-                <!-- Imágenes de avatares -->
-                <ImageView
-                    android:id="@+id/avatar1ImageView"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/perfil1"
-                    android:layout_column="0"
-                    android:layout_row="0"
-                    android:layout_margin="10dp"/>
-
-                <Button
-                    android:id="@+id/button1"
-                    android:layout_width="wrap_content"
+                <GridLayout
+                    android:id="@+id/avatar1SubGridLayout"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:columnCount="1"
+                    android:rowCount="3"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1">
+
+
+                    <ImageView
+                        android:id="@+id/avatar1ImageView"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/perfil1"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_margin="10dp"/>
+
+                    <TextView
+                        android:id="@+id/avatar1TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 monedas"
+                        android:textColor="#000000"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_gravity="center"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/avatar1Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="2"
+                        android:layout_column="0"
+                        android:padding="8dp"
+                        android:layout_gravity="center"
+                        android:text="COMPRAR" />
+
+
+                </GridLayout>
+
+                <GridLayout
+                    android:id="@+id/avatar2SubGridLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:columnCount="1"
+                    android:rowCount="3"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1">
+
+
+                    <ImageView
+                        android:id="@+id/avatar2ImageView"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/perfil2"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_margin="10dp" />
+
+                    <TextView
+                        android:id="@+id/avatar2TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 monedas"
+                        android:textColor="#000000"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_gravity="center"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/avatar2Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="2"
+                        android:layout_column="0"
+                        android:padding="8dp"
+                        android:layout_gravity="center"
+                        android:text="COMPRAR" />
+
+
+                </GridLayout>
+
+                <GridLayout
+                    android:id="@+id/avatar3SubGridLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
                     android:layout_row="1"
                     android:layout_column="0"
-                    android:padding="8dp"
-                    android:text="COMPRAR" />
+                    android:columnCount="1"
+                    android:rowCount="3"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1">
 
-                <ImageView
-                    android:id="@+id/avatar2ImageView"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/perfil2"
-                    android:layout_margin="10dp"/>
 
-                <ImageView
-                    android:id="@+id/avatar3ImageView"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/perfil3"
-                    android:layout_margin="10dp"/>
+                    <ImageView
+                        android:id="@+id/avatar3ImageView"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/perfil3"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_margin="10dp"/>
 
-                <ImageView
-                    android:id="@+id/avatar4ImageView"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/perfil4"
-                    android:layout_margin="10dp"/>
+                    <TextView
+                        android:id="@+id/avatar3TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 monedas"
+                        android:textColor="#000000"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_gravity="center"
+                        android:textSize="20sp" />
 
-                <ImageView
-                    android:id="@+id/avatar5ImageView"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/perfil5"
-                    android:layout_margin="10dp"/>
+                    <Button
+                        android:id="@+id/avatar3Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="2"
+                        android:layout_column="0"
+                        android:padding="8dp"
+                        android:layout_gravity="center"
+                        android:text="COMPRAR" />
 
-                <ImageView
-                    android:id="@+id/avatar6ImageView"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/perfil6"
-                    android:layout_margin="10dp"/>
+                </GridLayout>
+
+                <GridLayout
+                    android:id="@+id/avatar4SubGridLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:columnCount="1"
+                    android:rowCount="3"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1">
+
+
+                    <ImageView
+                        android:id="@+id/avatar4ImageView"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/perfil4"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_margin="10dp"/>
+
+                    <TextView
+                        android:id="@+id/avatar4TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 monedas"
+                        android:textColor="#000000"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_gravity="center"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/avatar4Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="2"
+                        android:layout_column="0"
+                        android:padding="8dp"
+                        android:layout_gravity="center"
+                        android:text="COMPRAR" />
+
+
+                </GridLayout>
+
+                <GridLayout
+                    android:id="@+id/avatar5SubGridLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
+                    android:layout_row="2"
+                    android:layout_column="0"
+                    android:columnCount="1"
+                    android:rowCount="3"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1">
+
+
+                    <ImageView
+                        android:id="@+id/avatar5ImageView"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/perfil5"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_margin="10dp"/>
+
+                    <TextView
+                        android:id="@+id/avatar5TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 monedas"
+                        android:textColor="#000000"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_gravity="center"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/avatar5Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="2"
+                        android:layout_column="0"
+                        android:padding="8dp"
+                        android:layout_gravity="center"
+                        android:text="COMPRAR" />
+
+
+                </GridLayout>
+
+                <GridLayout
+                    android:id="@+id/avatar6SubGridLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:columnCount="1"
+                    android:rowCount="3"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1">
+
+
+                    <ImageView
+                        android:id="@+id/avatar6ImageView"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/perfil6"
+                        android:layout_margin="10dp"/>
+
+                    <TextView
+                        android:id="@+id/avatar6TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 monedas"
+                        android:textColor="#000000"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_gravity="center"
+                        android:textSize="20sp" />
+
+
+                    <Button
+                        android:id="@+id/avatar6Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="2"
+                        android:layout_column="0"
+                        android:padding="8dp"
+                        android:layout_gravity="center"
+                        android:text="COMPRAR" />
+
+                </GridLayout>
+
+
 
             </GridLayout>
 

@@ -37,7 +37,7 @@ BOOELANOS
     is_logged_in
 
 ENTEROS
-
+    avatar_en_uso
 
 STRINGS
 

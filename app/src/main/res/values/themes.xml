@@ -10,6 +10,7 @@
         <item name="windowSplashScreenAnimatedIcon">@drawable/unologo</item>
         <item name="windowSplashScreenAnimationDuration">300</item>
         <item name="postSplashScreenTheme">@style/Theme.UnoGraham</item>
+        <item name="android:fontFamily">@font/raleway_regular</item>
     </style>
 
 </resources>
