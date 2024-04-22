@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.ImageButton
+import com.example.unograham.AmigosActivity
 import com.example.unograham.R
 
 class PantallaInicioActivity : AppCompatActivity() {

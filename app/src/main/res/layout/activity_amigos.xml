@@ -10,8 +10,51 @@
         android:id="@+id/backgroundLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/orange_to_red_degradado"
+        android:background="@drawable/fondo_cartas_vertical"
         android:padding="16dp">
+
+        <!-- Título de la tienda -->
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amigos"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"/>
+
+        <RelativeLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:background="@android:color/transparent"
+            android:padding="16dp">
+
+            <!-- Barra de búsqueda -->
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:hint="Buscar usuario"
+                android:inputType="text"
+                android:textColor="@color/black" />
+
+            <!-- Botón de enviar solicitud -->
+            <Button
+                android:id="@+id/sendRequestButton"
+                android:layout_width="240dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/searchEditText"
+                android:layout_centerHorizontal="true"
+                android:text="Enviar solicitud"
+                android:background="@drawable/rounded_button_background" />
+
+        </RelativeLayout>
 
         <ImageButton
             android:id="@+id/backArrow"
@@ -24,225 +67,43 @@
             android:background="@android:color/transparent"
             android:src="@drawable/flecha" />
 
-        <!-- Título de la tienda -->
-        <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Amigos"
-            android:textSize="50sp"
-            android:textColor="#FFFFFF"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"/>
-
-        <!-- Botón -->
+        <!-- Botón de solicitudes -->
         <Button
-            android:id="@+id/Button"
+            android:id="@+id/ButtonSolicitudes"
             android:layout_width="240dp"
             android:layout_height="80dp"
-            android:layout_below="@id/titleTextView"
+            android:layout_below="@id/searchLayout"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="6dp"
             android:background="@drawable/rounded_button_background"
             android:gravity="center"
             android:text="@string/Solicitud"
             android:textSize="18sp" />
+
+        <!-- ScrollView para la lista de amigos -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/Button"
+            android:layout_below="@id/ButtonSolicitudes"
             android:layout_marginTop="20dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp">
+
+            <!-- LinearLayout para contener las vistas de amigos -->
             <LinearLayout
                 android:id="@+id/avatarsGridLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Button"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp">
 
-                <!-- Primera fila -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profileImage"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/perfil1" />
-
-                    <TextView
-                        android:id="@+id/nameTextView"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Friend Name"
-                        android:textSize="40sp" />
-
-                    <ImageButton
-                        android:id="@+id/deleteIcon"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/cruz" />
-
-                </LinearLayout>
-
-                <!-- Segunda fila (nueva) -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profileImage2"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/perfil2" />
-
-                    <TextView
-                        android:id="@+id/nameTextView2"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Friend Name2"
-                        android:textSize="40sp" />
-
-                    <ImageButton
-                        android:id="@+id/deleteIcon2"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/cruz" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profileImage3"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/perfil3" />
-
-                    <TextView
-                        android:id="@+id/nameTextView3"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Friend Name 3"
-                        android:textSize="40sp" />
-
-                    <ImageButton
-                        android:id="@+id/deleteIcon3"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/cruz" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profileImage4"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/perfil4" />
-
-                    <TextView
-                        android:id="@+id/nameTextView4"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Friend Name 4"
-                        android:textSize="40sp" />
-
-                    <ImageButton
-                        android:id="@+id/deleteIcon4"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/cruz" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profileImage5"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/perfil5" />
-
-                    <TextView
-                        android:id="@+id/nameTextView5"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Friend Name 5"
-                        android:textSize="40sp" />
-
-                    <ImageButton
-                        android:id="@+id/deleteIcon5"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/cruz" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profileImage6"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/perfil6" />
-
-                    <TextView
-                        android:id="@+id/nameTextView6"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Friend Name 6"
-                        android:textSize="40sp" />
-
-                    <ImageButton
-                        android:id="@+id/deleteIcon6"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/cruz" />
-
-                </LinearLayout>
+                <!-- Las vistas de amigos se crearán dinámicamente aquí -->
 
             </LinearLayout>
+
         </ScrollView>
 
     </RelativeLayout>
 </RelativeLayout>
-

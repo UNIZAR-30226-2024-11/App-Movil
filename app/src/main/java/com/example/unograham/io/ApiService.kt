@@ -2,9 +2,12 @@ package com.example.unograham.io
 
 import retrofit2.Call
 import com.example.unograham.io.reponse.LoginResponse
+import com.example.unograham.io.request.FriendRemoveRequest
+import com.example.unograham.io.request.FriendRequest
 import com.example.unograham.io.response.RegisterResponse
 import com.example.unograham.io.request.LoginRequest
 import com.example.unograham.io.request.RegisterRequest
+import com.example.unograham.io.response.FriendResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.POST
@@ -15,6 +18,15 @@ interface ApiService {
     fun postlogin(@Body request: LoginRequest): Call<LoginResponse>
     @POST("register") // Petición a la ruta del registro
     fun postRegister(@Body request: RegisterRequest): Call<RegisterResponse>
+
+    @POST("solicitud")
+    fun sendFriendRequest(@Body request: FriendRequest): Call<FriendResponse>
+
+    @POST("amigos")
+    fun getFriends(@Body request: FriendRequest): Call<FriendResponse>
+
+    @POST("amigoseliminar")
+    fun removeFriend(@Body request: FriendRemoveRequest): Call<FriendResponse>
 
     companion object Factory{
         private const val BASE_URL = "https://backend-eg2q.onrender.com/api/" //URL de la API
