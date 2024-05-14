@@ -36,6 +36,10 @@
         <activity
             android:name=".activities.TiendaActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.CrearSalaActivity"
+            android:exported="false" />
+
 
 
         <activity
