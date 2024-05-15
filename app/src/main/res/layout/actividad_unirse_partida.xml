@@ -27,69 +27,34 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/logoImageView"
             android:layout_centerHorizontal="true"
-            android:text="CREAR PARTIDA"
+            android:text="UNIRSE A PARTIDA"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <!-- Código de la partida -->
-        <LinearLayout
-            android:id="@+id/codeLayout"
-            android:layout_width="185dp"
-            android:layout_height="64dp"
+        <EditText
+            android:id="@+id/gameCodeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/titleTextView"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/border_background"
-            android:orientation="horizontal">
+            android:hint="Código de la partida"
+            android:inputType="text"
+            android:textColor="@color/black" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_background"
-                android:text="Código de partida:"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/gameCodeTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/black" />
-        </LinearLayout>
-
-        <!-- Botón "Invitar a un amigo" -->
+        <!-- Botón "Unirse" -->
         <Button
-            android:id="@+id/inviteButton"
-            android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/titleTextView"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="-1dp"
-            android:background="@drawable/rounded_button_background"
-            android:text="Invitar a un amigo" />
-
-        <!-- ListView para mostrar participantes -->
-        <ListView
-            android:id="@+id/participantsListView"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_below="@id/inviteButton"
-            android:layout_marginTop="20dp"/>
-
-        <!-- Botón "Comenzar" -->
-        <Button
-            android:id="@+id/startButton"
+            android:id="@+id/joinButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/participantsListView"
+            android:layout_below="@id/gameCodeEditText"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
             android:background="@drawable/rounded_button_background"
-            android:text="Comenzar" />
+            android:text="Unirse" />
     </RelativeLayout>
 
     <!-- Barra de menú -->
